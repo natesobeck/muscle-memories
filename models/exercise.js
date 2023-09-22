@@ -6,7 +6,10 @@ const exerciseSchema = new Schema({
   name: String,
   mainTarget: [String],
   secondaryTarget: [String],
-  generalFatigueCost: String,
+  generalFatigueCost: {
+    type: String,
+    enum: ["low", "medium", "high"]
+  },
   note: String,
   addedBy: {
     type: Schema.Types.ObjectId,
