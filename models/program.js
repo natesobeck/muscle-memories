@@ -12,7 +12,7 @@ const programExerciseSchema = new Schema({
   weight: {
     type: Number,
     min: 1,
-  }
+  },
   rpe: {
     type: Number,
     min: 1,
