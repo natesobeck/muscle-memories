@@ -1,8 +1,12 @@
 import { Exercise } from "../models/exercise.js"
 
 function newExercise(req, res) {
-  res.render('exercises/new', {
-    title: 'Add Exercise',
+  Exercise.find({})
+  .then(exercises => {
+    res.render('exercises/new', {
+      title: 'Add Exercise',
+      exercises: exercises,
+    })
   })
   .catch(err => {
     console.log(err)

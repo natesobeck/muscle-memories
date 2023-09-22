@@ -9,7 +9,7 @@ const exerciseSchema = new Schema({
   },
   equipment: {
     type: String,
-    enum: ['dumbbell', 'barbell', 'bodyweight', 'cable', 'machine', 'other']
+    enum: ['Dumbbell', 'Barbell', 'Bodyweight', 'Cable', 'Machine', 'Other']
   },
   mainTargetedGroup: {
     type: [String],
@@ -20,7 +20,7 @@ const exerciseSchema = new Schema({
     default: ["Muscle group information not added."]},
   fatigueCost: {
     type: String,
-    enum: ["low", "medium", "high"]
+    enum: ["Low", "Medium", "High"]
   },
   note: {
     type: String,
