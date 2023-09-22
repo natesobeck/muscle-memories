@@ -10,6 +10,14 @@ function newExercise(req, res) {
   })
 }
 
+function create(req, res) {
+  Exercise.create(req.body)
+  .then(exercise => {
+    res.redirect('/exercises/new')
+  })
+}
+
 export {
   newExercise as new,
+  create
 }

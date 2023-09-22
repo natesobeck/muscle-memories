@@ -4,6 +4,7 @@ import * as exercisesCtrl from '../controllers/exercises.js'
 const router = Router()
 
 router.get('/new', exercisesCtrl.new)
+router.post('/', exercisesCtrl.create)
 
 export {
   router
