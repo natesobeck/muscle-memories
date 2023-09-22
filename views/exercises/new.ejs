@@ -1,6 +1,21 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h1>This is my new exercises page!</h1>
+<main>
+  <h1><%= title %></h1>
+  <form id="new-exercise-form" action="/exercises" method="POST">
+    <label for="exercise-name-input">Exercise Name:</label>
+    <input type="text" name="name" id="exercise-name-input">
+    <label for="main-target-input">Main Targeted Muscles:</label>
+    <input type="text" name="mainTargetedGroup" id="main-target-input">
+    <label for="secondary-target-input">Secondary Targeted Muscles:</label>
+    <input type="text"  name="secondaryTargetedGroup" id="secondary-target-input">
+    <label for="fatigue-cost-input">Estimated Fatigue Cost:</label>
+    <input type="text" name="generalFatigueCost" id="fatigue-cost-input">
+    <label for="note-input">Additional notes:</label>
+    <input type="text" name="creatorNote" id="note-input">
+    <button type="submit">Add Exercise</button>
+  </form>
+</main>
 
 <%- include('../partials/footer') %>

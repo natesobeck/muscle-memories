@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const exerciseSchema = new Schema({
   name: String,
-  mainTarget: [String],
-  secondaryTarget: [String],
+  mainTargetedGroup: [String],
+  secondaryTargetedGroup: [String],
   generalFatigueCost: {
     type: String,
     enum: ["low", "medium", "high"]
