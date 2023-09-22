@@ -15,6 +15,7 @@ function newExercise(req, res) {
 }
 
 function create(req, res) {
+  req.body.addedBy = req.user.profile._id
   Exercise.create(req.body)
   .then(exercise => {
     res.redirect('/exercises/new')
