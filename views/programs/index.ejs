@@ -24,6 +24,14 @@
       <a href="/programs/<%= program._id %>">
         <button>Show Program Details</button>
       </a>
+      <% if (program.addedBy._id.equals(user?.profile._id)) { %>
+        <form
+            action="/programs/<%= program._id %>?_method=DELETE"
+            method="POST"
+          >
+          <button type="submit">X</button>
+        </form>
+      <% } %>
     </div>
   <% }) %>
 </main>

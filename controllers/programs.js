@@ -85,6 +85,17 @@ function createExerciseSchemaWithinProgram(req, res) {
   })
 }
 
+function deleteProgram(req, res) {
+  Program.findByIdAndDelete(req.params.programId)
+  .then(program => {
+    res.redirect(`/programs`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/programs`)
+  })
+}
+
 function deleteExerciseFromProgram(req, res) {
   Program.find(req.params.programId)
   .then(program => {
@@ -111,5 +122,6 @@ export {
   show,
   createExerciseSchemaWithinProgram,
   deleteExerciseFromProgram,
+  deleteProgram as delete,
 
 }
