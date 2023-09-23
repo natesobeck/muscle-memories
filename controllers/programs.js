@@ -41,7 +41,16 @@ function create(req, res) {
 function show(req, res) {
   Program.findById(req.params.programId)
   .populate('addedBy')
+  .populate({
+    path: 'exercises',
+    model: 'programExerciseSchema',
+    populate: {
+      path: 'exercise',
+      model: 'Exercise',
+    }
+  })
   .then(program => {
+    console.log(program.exercises)
     Exercise.find({})
     .then(exercises => {
       res.render('programs/show', {
@@ -57,9 +66,30 @@ function show(req, res) {
   })
 }
 
+function createExerciseSchemaWithinProgram(req, res) {
+  Program.findById(req.params.programId)
+  .populate('exercises')
+  .then(program => {
+    program.exercises.push(req.body)
+    program.save()
+    .then(() => {
+      res.redirect(`/programs/${program._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/programs/${program._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/programs`)
+  })
+}
+
 export {
   newProgram as new,
   create,
   index,
   show,
+  createExerciseSchemaWithinProgram,
 }

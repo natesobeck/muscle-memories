@@ -9,10 +9,6 @@ const programExerciseSchema = new Schema({
   },
   sets: Number,
   reps: String,
-  weight: {
-    type: Number,
-    min: 1,
-  },
   rpe: {
     type: Number,
     min: 1,
