@@ -12,7 +12,7 @@ function index(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/programs/new')
+    res.redirect('/programs')
   })
 }
 
@@ -30,11 +30,26 @@ function create(req, res) {
   req.body.addedBy = req.user.profile._id
   Program.create(req.body)
   .then(program => {
-    res.redirect(`/programs/new`)
+    res.redirect(`/programs/:programId`)
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/programs/new')
+    res.redirect('/programs')
+  })
+}
+
+function show(req, res) {
+  Program.findById(req.params.programId)
+  .populate()
+  .then(program => {
+    res.render('programs/show', {
+      program,
+      title: 'Program Details'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/programs')
   })
 }
 
@@ -42,4 +57,5 @@ export {
   newProgram as new,
   create,
   index,
+  show,
 }
