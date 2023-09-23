@@ -1,0 +1,41 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Program Details</h1>
+  <table>
+    <tr>
+      <th>Program Name</th>
+      <th>Split</th>
+      <th>Days Per Week</th>
+      <th>Added By</th>
+      <th>Additional Note</th>
+    </tr>
+    <tr>
+      <td><%= program.name %></td>
+      <td><%= program.split %></td>
+      <td><%= program.daysPerWeek %></td>
+      <td><%= program.addedBy.name %></td>
+      <td><%= program.note %></td>
+    </tr>
+  </table>
+  <h2>Add Exercises to the Program Below</h2>
+  <form action="???" method="POST">
+    <label for="exercise-select">Pick an Exerise: </label>
+    <select id="exercise-select" name="name">
+      <% exercises.forEach(exercise => { %>
+        <option value="<%= exercise._id %>"><%= exercise.equipment %> <%= exercise.name %></option>
+      <% }) %>
+    </select>
+    <label for="sets-input">Sets: </label>
+    <input type="number" min="1" max="10" id="sets-input" name="sets">
+    <label for="reps-input">Reps or Rep Range: </label>
+    <input type="text" id="reps-input" name="reps">
+    <label for="rpe-input">RPE (Rate of Perceived Exertion)/RIR (Reps in Reserve)</label>
+    <input name="rpe" type="number" min="1" max="10" id="rpe-input">
+    <label for="tempo-input">Tempo: </label>
+    <input type="text" id="tempo-input" name="tempo">
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

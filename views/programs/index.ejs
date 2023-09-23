@@ -21,10 +21,10 @@
           <td><%= program.note %></td>
         </tr>
       </table>
+      <a href="/programs/<%= program._id %>">
+        <button>Show Program Details</button>
+      </a>
     </div>
-    <a href="/programs/<%= program._id %>">
-      <button>Show Program Details</button>
-    </a>
   <% }) %>
 </main>
 

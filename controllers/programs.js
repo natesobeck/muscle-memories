@@ -40,11 +40,15 @@ function create(req, res) {
 
 function show(req, res) {
   Program.findById(req.params.programId)
-  .populate()
+  .populate('addedBy')
   .then(program => {
-    res.render('programs/show', {
-      program,
-      title: 'Program Details'
+    Exercise.find({})
+    .then(exercises => {
+      res.render('programs/show', {
+        program,
+        exercises,
+        title: 'Program Details'
+      })
     })
   })
   .catch(err => {
