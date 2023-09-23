@@ -3,6 +3,7 @@ import * as programsCtrl from '../controllers/programs.js'
 
 const router = Router()
 
+router.get('/', programsCtrl.index)
 router.get('/new', programsCtrl.new)
 router.post('/', programsCtrl.create)
 

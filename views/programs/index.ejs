@@ -1,5 +1,28 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<main>
+  <h1>User Programs</h1>
+  <% programs.forEach(program => { %>
+    <div class="program-card">
+      <table>
+        <tr>
+          <th>Program Name</th>
+          <th>Split</th>
+          <th>Days Per Week</th>
+          <th>Added By</th>
+          <th>Additional Note</th>
+        </tr>
+        <tr>
+          <td><%= program.name %></td>
+          <td><%= program.split %></td>
+          <td><%= program.daysPerWeek %></td>
+          <td><%= program.addedBy.name %></td>
+          <td><%= program.note %></td>
+        </tr>
+      </table>
+    </div>
+  <% }) %>
+</main>
 
 <%- include('../partials/footer') %>
