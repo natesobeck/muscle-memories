@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <% if (program.addedBy._id.equals(user?.profile._id)) { %>
-  <form method="POST" action="???">
+  <form method="POST" action="/programs/<%= program._id %>?_method=PUT">
     <label for="program-name-input">Program Name:</label>
     <input type="text" name="name" id="program-name-input" value="<%= program.name %>">
     <label for="days-per-week-select">Days Per Week:</label>

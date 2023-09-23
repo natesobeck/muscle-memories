@@ -129,6 +129,17 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Program.findByIdAndUpdate(req.params.programId, req.body, {new: true})
+  .then(program => {
+    res.redirect(`/programs/${program._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/programs`)
+  })
+}
+
 export {
   newProgram as new,
   create,
@@ -138,5 +149,5 @@ export {
   deleteExerciseFromProgram,
   deleteProgram as delete,
   edit,
-
+  update,
 }
