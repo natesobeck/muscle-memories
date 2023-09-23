@@ -97,7 +97,7 @@ function deleteProgram(req, res) {
 }
 
 function deleteExerciseFromProgram(req, res) {
-  Program.find(req.params.programId)
+  Program.findById(req.params.programId)
   .then(program => {
     program.exercises.id(req.params.exerciseId).deleteOne()
     program.save()
@@ -111,7 +111,21 @@ function deleteExerciseFromProgram(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect(`/programs/`)
+    res.redirect(`/programs`)
+  })
+}
+
+function edit(req, res) {
+  Program.findById(req.params.programId)
+  .then(program => {
+    res.render('programs/edit', {
+      program,
+      title: 'Edit Program',
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/programs`)
   })
 }
 
@@ -123,5 +137,6 @@ export {
   createExerciseSchemaWithinProgram,
   deleteExerciseFromProgram,
   deleteProgram as delete,
+  edit,
 
 }
