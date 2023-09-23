@@ -29,10 +29,12 @@ const programSchema = new Schema({
   },
   daysPerWeek: {
     type: Number,
-    min: 1,
-    max: 7,
+    Enum: [1, 2, 3, 4, 5, 6, 7]
   },
-  exercises: [programExerciseSchema],
+  exercises: {
+    type: [programExerciseSchema],
+    default: [],
+  },
   note: String,
   addedBy: {
     type: Schema.Types.ObjectId,

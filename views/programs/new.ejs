@@ -1,6 +1,33 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h1>This is my new programs page!</h1>
+<% if (user) { %>
+  <form method="POST" action="/programs">
+    <label for="program-name-input">Program Name:</label>
+    <input type="text" name="name" id="program-name-input">
+    <label for="days-per-week-select">Days Per Week:</label>
+    <select name="daysPerWeek" id="days-per-week-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+    <label for="split-select">Split:</label>
+    <select name="split" id="split-select">
+      <option value="Push/Pull/Legs">Push/Pull/Legs</option>
+      <option value="Upper/Lower">Upper/Lower</option>
+      <option value="Full Body">Full Body</option>
+      <option value="Other">Other</option>
+    </select>
+    <label for="program-note-input">Additional Notes:</label>
+    <input type="text" name="note" id="program-note-input">
+    <button type="submit">Add Program</button>
+  </form>
+<% } else { %>
+  <h3>Please sign in to add a program.</h3>
+<% } %>
 
 <%- include('../partials/footer') %>

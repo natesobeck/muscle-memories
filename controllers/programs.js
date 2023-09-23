@@ -11,6 +11,19 @@ function newProgram(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.addedBy = req.user.profile._id
+  Program.create(req.body)
+  .then(program => {
+    res.redirect(`/programs/new`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/programs/new')
+  })
+}
+
 export {
-  newProgram as new
+  newProgram as new,
+  create,
 }
