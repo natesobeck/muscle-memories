@@ -50,7 +50,6 @@ function show(req, res) {
     }
   })
   .then(program => {
-    console.log(program.exercises)
     Exercise.find({})
     .then(exercises => {
       res.render('programs/show', {
@@ -86,10 +85,31 @@ function createExerciseSchemaWithinProgram(req, res) {
   })
 }
 
+function deleteExerciseFromProgram(req, res) {
+  Program.find(req.params.programId)
+  .then(program => {
+    program.exercises.id(req.params.exerciseId).deleteOne()
+    program.save()
+    .then(() => {
+      res.redirect(`/programs/${program._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/programs/${program._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/programs/`)
+  })
+}
+
 export {
   newProgram as new,
   create,
   index,
   show,
   createExerciseSchemaWithinProgram,
+  deleteExerciseFromProgram,
+
 }
