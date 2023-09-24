@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/programs/index.css">
 <%- include('../partials/nav') %>
 
 <main>
@@ -21,20 +22,22 @@
           <td><%= program.note %></td>
         </tr>
       </table>
-      <a href="/programs/<%= program._id %>">
-        <button>Show Program Details</button>
-      </a>
-      <% if (program.addedBy._id.equals(user?.profile._id)) { %>
-        <a href="/programs/<%= program._id %>/edit">
-          <button type="submit">Edit this Program</button>
+      <div class="btn-container">
+        <a href="/programs/<%= program._id %>">
+          <button class="program-index-btn details-btn">Details</button>
         </a>
-        <form
-            action="/programs/<%= program._id %>?_method=DELETE"
-            method="POST"
-          >
-          <button type="submit">Delete this Program</button>
-        </form>
-      <% } %>
+        <% if (program.addedBy._id.equals(user?.profile._id)) { %>
+          <a href="/programs/<%= program._id %>/edit">
+            <button type="submit" class="program-index-btn edit-btn">Edit</button>
+          </a>
+          <form
+              action="/programs/<%= program._id %>?_method=DELETE"
+              method="POST"
+            >
+            <button type="submit" class="program-index-btn delete-btn">Delete</button>
+          </form>
+        <% } %>
+      </div>
     </div>
   <% }) %>
 </main>

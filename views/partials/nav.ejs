@@ -4,39 +4,54 @@
 </head>
 <body>
   <nav>
+    <div class="nav-item-container">
+      <a href="/">
+        HOME
+      </a>
+    </div>
     <div class="nav-divider"></div>
+    <div class="nav-item-container">
       <a href="/programs">
-        All Programs
+        ALL PROGRAMS
       </a>
+    </div>
     <div class="nav-divider"></div>
+    <div class="nav-item-container">
       <a href="/programs/new">
-        Add Program
+        ADD PROGRAM
       </a>
+    </div>
     <div class="nav-divider"></div>
+    <div class="nav-item-container">
       <a href="/exercises/new">
-        Add Exercise
+        EXERCISES
       </a>
+    </div>
     <div class="nav-divider"></div>
     <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
+      <div class="nav-item-container">
+        <a href="/auth/logout" class="right">
+          <button  id="logout-btn" type="submit">Logout</button>
+        </a>
+      </div>
     <% } else { %>
-      <div 
-        id="g_id_onload"
-        data-client_id="<%= googleClientID %>"
-        data-login_uri="/auth/google"
-        data-auto_prompt="false"
-        data-prompt_parent_id="g_id_onload"
-      ></div>
-      <div 
-        class="g_id_signin right"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      ></div>
+      <div class="nav-item-container">
+        <div 
+          id="g_id_onload"
+          data-client_id="<%= googleClientID %>"
+          data-login_uri="/auth/google"
+          data-auto_prompt="false"
+          data-prompt_parent_id="g_id_onload"
+        ></div>
+        <div 
+          class="g_id_signin right"
+          data-type="standard"
+          data-size="large"
+          data-theme="outline"
+          data-text="sign_in_with"
+          data-shape="rectangular"
+          data-logo_alignment="left"
+        ></div>
+      </div>
     <% } %>
   </nav>

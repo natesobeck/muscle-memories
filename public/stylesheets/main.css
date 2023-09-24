@@ -1,0 +1,76 @@
+html {
+  box-sizing: border-box;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after {
+  /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default but can be overridden as needed */
+  box-sizing: inherit;
+}
+
+main {
+  width: 90vmin;
+  margin-left: 5vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body {
+  background-color: lightgray;
+  color: #343a40;
+  /* Use a system font, if none are available use any found sans-sarif font */
+  font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+    'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: #9a031e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  min-height: 60px;
+  font-size: .6rem;
+  border-bottom: 2px solid #ffd500;
+  width: 100vmin;
+  position: fixed;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: auto;
+  text-align: center;
+  text-justify: center;
+}
+
+.nav-item-container {
+  width: 15%;
+  display: flex;
+  justify-content:center;
+}
+
+.nav-divider {
+  border-right: 1px solid white;
+  border-color: #ffd500;
+  height: 35px;
+  background: white;
+  margin: 0px 7px;
+}
+
+a {
+  text-decoration: none;
+  color: #9a031e;
+  font-weight: bold;
+}
+
+h1 {
+  padding-top: 60px;
+}

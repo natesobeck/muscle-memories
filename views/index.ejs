@@ -2,7 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Hi there <%= user ? user.profile.name : "Friend" %></h1>
+  <h1>Welcome to Muscle Memories<%= user ? `, ${user.profile.name}!` : "!" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -11,10 +11,9 @@
       />
     </div>
   <% } %>
-  <h3>Welcome to Muscle Memories!</h3>
   <h4>Here, you can find programs run by real people. You can run them yourselves, rate them, or just get some new ideas.</h4>
   <p>I don't know about you, but I'm tired of instagram-style workouts. There's no progression, the exercises are flashy but unsubstantive, and most importantly: it's not what people actually do in the gym! I wanted to make a place where people can talk about what they actually do, so they can help each other get better. What program are you running? Here's how you get started.</p>
-  <strong>Step 1: Add the exercises you need to the <a href="/exercises">exercises page</a>. We've already got lots of them, so check if they're already there first.</strong>
+  <strong>Step 1: Add the exercises you need to the <a href="/exercises/new">exercises page</a>. We've already got lots of them, so check if they're already there first.</strong>
   <strong>Step 2: Add your program overview to the <a href="programs/new">programs page</a>.</strong>
   <strong>Step 3: Add the workouts to the program. This is where you're gonna select your exercises.</strong>
   <p>Or, you can just skip all that and check out the wonderful programs of the other users <a href="/programs">here</a>!</p>
