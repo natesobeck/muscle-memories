@@ -48,6 +48,12 @@ function show(req, res) {
       populate: 'exercise'
     }
   })
+  .populate({
+    path: 'reviews',
+    populate: {
+      path: 'author'
+    }
+  })
   .then(program => {
     Exercise.find({})
     .then(exercises => {
@@ -164,6 +170,7 @@ function createReview(req, res) {
   req.body.author = req.user.profile._id
   Program.findById(req.params.programId)
   .then(program => {
+    console.log(`PROGRAM: ${program}`)
     program.reviews.push(req.body)
     program.save()
     .then(() => {
