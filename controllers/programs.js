@@ -118,7 +118,9 @@ function deleteProgram(req, res) {
 function deleteExerciseFromWorkout(req, res) {
   Program.findById(req.params.programId)
   .then(program => {
-    program.exercises.id(req.params.exerciseId).deleteOne()
+    const workout = program.workouts.id(req.params.workoutId)
+    const exercise = workout.exercises.id(req.params.exerciseId)
+    exercise.deleteOne()
     program.save()
     .then(() => {
       res.redirect(`/programs/${program._id}`)
