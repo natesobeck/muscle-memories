@@ -123,6 +123,11 @@
         <h5>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleDateString()  %></h5>
         <p>Rating: <%= review.rating %></p>
         <p><%= review.content %></p>
+        <% if (review.author._id.equals)(user?.profile._id) { %>
+          <form method="POST" action="/programs/<%= program._id %>/reviews/<%= review_id %>">
+            <button type="submit">X</button>
+          </form>
+        <% } %>
       </div>
     <% }) %>
   <% } else { %>

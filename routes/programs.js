@@ -13,6 +13,7 @@ router.post('/:programId/workouts/:workoutId/exercises', programsCtrl.addExercis
 router.post('/:programId/reviews', programsCtrl.createReview)
 router.put('/:programId', programsCtrl.update)
 router.delete('/:programId', programsCtrl.delete)
+router.delete('/:programId/reviews/:reviewId')
 router.delete('/:programId/workouts/:workoutId/exercises/:exerciseId', programsCtrl.deleteExerciseFromWorkout)
 
 export {
