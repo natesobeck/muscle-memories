@@ -42,6 +42,13 @@ function create(req, res) {
 function show(req, res) {
   Program.findById(req.params.programId)
   .populate('addedBy')
+  .populate({
+    path: 'workouts',
+    populate: {
+      path: 'exercises',
+      populate: 'exercise'
+    }
+  })
   .then(program => {
     Exercise.find({})
     .then(exercises => {
@@ -49,7 +56,11 @@ function show(req, res) {
         program,
         exercises,
         title: 'Program Details'
-      })
+        })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/programs')
     })
   })
   .catch(err => {
