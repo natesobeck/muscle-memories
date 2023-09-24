@@ -1,6 +1,5 @@
-import { Program, individualWorkoutSchema } from "../models/program.js"
+import { Program } from "../models/program.js"
 import { Exercise } from "../models/exercise.js"
-
 
 function index(req, res) {
   Program.find({})
@@ -161,6 +160,26 @@ function update(req, res) {
   })
 }
 
+function createReview(req, res) {
+  req.body.author = req.user.profile._id
+  Program.findById(req.params.programId)
+  .then(program => {
+    program.reviews.push(req.body)
+    program.save()
+    .then(() => {
+      res.redirect(`/programs/${program._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/programs${program._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/programs`)
+  })
+}
+
 export {
   newProgram as new,
   create,
@@ -172,4 +191,5 @@ export {
   deleteProgram as delete,
   edit,
   update,
+  createReview,
 }

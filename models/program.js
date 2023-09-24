@@ -2,6 +2,22 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const reviewSchema = new Schema ({
+  content: String,
+  rating: {
+    type: Number,
+    min: 1,
+    max: 5,
+    default: 5
+  },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'Profile'
+  }
+}, {
+  timestamps: true
+})
+
 const programExerciseSchema = new Schema({
   exercise: {
     type: Schema.Types.ObjectId,
@@ -15,6 +31,8 @@ const programExerciseSchema = new Schema({
     max: 10,
   },
   tempo: String,
+}, {
+  timestamps: true
 })
 
 const individualWorkoutSchema = new Schema ({
@@ -23,6 +41,8 @@ const individualWorkoutSchema = new Schema ({
     type: [programExerciseSchema],
     default: []
   }
+}, {
+  timestamps: true
 })
 
 const programSchema = new Schema({
@@ -40,6 +60,7 @@ const programSchema = new Schema({
     default: [],
   },
   note: String,
+  reviews: [reviewSchema],
   addedBy: {
     type: Schema.Types.ObjectId,
     ref: 'Profile'
@@ -51,6 +72,5 @@ const programSchema = new Schema({
 const Program = mongoose.model('Program', programSchema)
 
 export {
-  Program,
-  individualWorkoutSchema,
+  Program
 }

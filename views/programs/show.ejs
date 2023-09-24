@@ -3,6 +3,17 @@
 
 <main>
   <h1>Program Details</h1>
+  <% if (program.addedBy._id.equals(user?.profile._id)) { %>
+    <a href="/programs/<%= program._id %>/edit">
+      <button type="submit">Edit this Program</button>
+    </a>
+    <form
+      action="/programs/<%= program._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Delete this Program</button>
+    </form>
+  <% } %>
   <h3>Basic Overview:</h3>
   <table>
     <tr>
@@ -11,9 +22,6 @@
       <th>Days Per Week</th>
       <th>Added By</th>
       <th>Additional Note</th>
-      <% if (program.addedBy._id.equals(user?.profile._id)) { %>
-        <th></th>
-      <% } %>
     </tr>
     <tr>
       <td><%= program.name %></td>
@@ -21,13 +29,6 @@
       <td><%= program.daysPerWeek %></td>
       <td><%= program.addedBy.name %></td>
       <td><%= program.note %></td>
-      <% if (program.addedBy._id.equals(user?.profile._id)) { %>
-        <td>
-          <a href="/programs/<%= program._id %>/edit">
-            <button type="submit">Edit Details</button>
-          </a>
-        </td>
-      <% } %>
     </tr>
   </table>
   <% program.workouts.forEach(workout => { %>
@@ -97,6 +98,24 @@
       <input type="string" name="name" id="workout-name-input">
       <button type="submit">Add Workout</button>
     </form>
+  <% } %>
+  <h2>Reviews</h2>
+  <% if (user) { %>
+    <form action="/programs/<%= program._id %>/reviews" method="POST">
+      <label for="content-text">Review: </label>
+      <textarea name="content" id="content-text"></textarea>
+      <label for="rating-select">Rating: </label>
+      <select name="rating" id="rating-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
+      <button type="submit">Add Review</button>
+    </form>
+  <% } else { %>
+    <h4>Please sign in to add a review.</h4>
   <% } %>
 </main>
 
