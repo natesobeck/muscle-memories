@@ -17,6 +17,14 @@ const programExerciseSchema = new Schema({
   tempo: String,
 })
 
+const individualWorkoutSchema = new Schema ({
+  name: String,
+  exercises: {
+    type: [programExerciseSchema],
+    default: []
+  }
+})
+
 const programSchema = new Schema({
   name: String,
   split: {
@@ -27,8 +35,8 @@ const programSchema = new Schema({
     type: Number,
     Enum: [1, 2, 3, 4, 5, 6, 7]
   },
-  exercises: {
-    type: [programExerciseSchema],
+  workouts: {
+    type: [individualWorkoutSchema],
     default: [],
   },
   note: String,
@@ -43,5 +51,6 @@ const programSchema = new Schema({
 const Program = mongoose.model('Program', programSchema)
 
 export {
-  Program
+  Program,
+  individualWorkoutSchema,
 }

@@ -30,20 +30,10 @@
       <% } %>
     </tr>
   </table>
-  <h3>Exercises:</h3>
-    <div class="exercise-card">
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Sets</th>
-          <th>Reps or Rep Range</th>
-          <th>RPE/RIR</th>
-          <th>Tempo</th>
-          <% if (program.addedBy._id.equals(user?.profile._id) && program.exercises.length) { %>
-            <th></th>
-          <% } %>
-        </tr>
-        <% program.exercises.forEach(exercise => { %>
+  <% program.workouts.forEach(workout => { %>
+      <h3><%= workout.name %>:</h3>
+      <div class="workout-card">
+        <table>
           <tr>
             <td><%= exercise.exercise.equipment %> <%= exercise.exercise.name %></td>
             <td><%= exercise.sets %></td>
@@ -61,27 +51,35 @@
             </td>
             <% } %>
           </tr>
-        <% }) %>
-      </table>
-    </div>
+        </table>
+      </div>
+      <% if (program.addedBy._id.equals(user?.profile._id)) { %>
+        <h4>Add an exercise to this workout:</h4>
+        <form action="/programs/<%= program._id %>/workouts/<%= workout._id %>/exercises" method="POST">
+          <label for="exercise-select">Pick an Exerise: </label>
+          <select id="exercise-select" name="exercise">
+            <% exercises.forEach(exercise => { %>
+              <option value="<%= exercise._id %>"><%= exercise.equipment %> <%= exercise.name %></option>
+            <% }) %>
+          </select>
+          <label for="sets-input">Sets: </label>
+          <input type="number" min="1" max="10" id="sets-input" name="sets">
+          <label for="reps-input">Reps or Rep Range: </label>
+          <input type="text" id="reps-input" name="reps">
+          <label for="rpe-input">RPE/RIR: </label>
+          <input name="rpe" type="number" min="1" max="10" id="rpe-input">
+          <label for="tempo-input">Tempo: </label>
+          <input type="text" id="tempo-input" name="tempo">
+          <button type="submit">Add Exercise</button>
+        </form>
+      <% } %>
+  <% }) %>
   <% if (program.addedBy._id.equals(user?.profile._id)) { %>
-    <h2>Add Exercises to the Program Below</h2>
-    <form action="/programs/<%= program._id %>/exercises" method="POST">
-      <label for="exercise-select">Pick an Exerise: </label>
-      <select id="exercise-select" name="exercise">
-        <% exercises.forEach(exercise => { %>
-          <option value="<%= exercise._id %>"><%= exercise.equipment %> <%= exercise.name %></option>
-        <% }) %>
-      </select>
-      <label for="sets-input">Sets: </label>
-      <input type="number" min="1" max="10" id="sets-input" name="sets">
-      <label for="reps-input">Reps or Rep Range: </label>
-      <input type="text" id="reps-input" name="reps">
-      <label for="rpe-input">RPE/RIR: </label>
-      <input name="rpe" type="number" min="1" max="10" id="rpe-input">
-      <label for="tempo-input">Tempo: </label>
-      <input type="text" id="tempo-input" name="tempo">
-      <button type="submit">Add Exercise</button>
+    <h2>Add a workout to the program:</h2>
+    <form action="/programs/<%= program._id %>/workouts" method="POST">
+      <label for="workout-name-input">Name (i.e. Upper 1, Push, etc.): </label>
+      <input type="string" name="name" id="workout-name-input">
+      <button type="submit">Add Workout</button>
     </form>
   <% } %>
 </main>

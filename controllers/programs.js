@@ -1,5 +1,6 @@
-import { Program } from "../models/program.js"
+import { Program, individualWorkoutSchema } from "../models/program.js"
 import { Exercise } from "../models/exercise.js"
+
 
 function index(req, res) {
   Program.find({})
@@ -41,14 +42,6 @@ function create(req, res) {
 function show(req, res) {
   Program.findById(req.params.programId)
   .populate('addedBy')
-  .populate({
-    path: 'exercises',
-    model: 'programExerciseSchema',
-    populate: {
-      path: 'exercise',
-      model: 'Exercise',
-    }
-  })
   .then(program => {
     Exercise.find({})
     .then(exercises => {
@@ -65,17 +58,32 @@ function show(req, res) {
   })
 }
 
-function createExerciseSchemaWithinProgram(req, res) {
+function createWorkout(req, res) {
   Program.findById(req.params.programId)
-  .populate('exercises')
-  .then(program => {
-    program.exercises.push(req.body)
+  .then (program => {
+    program.workouts.push(req.body)
     program.save()
     .then(() => {
       res.redirect(`/programs/${program._id}`)
     })
     .catch(err => {
       console.log(err)
+      res.redirect(`/programs/${program._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/programs`)
+  })
+}
+
+function addExerciseToWorkout(req, res) {
+  Program.findById(req.params.programId)
+  .then(program => {
+    const workout = program.workouts.id(req.params.workoutId)
+    workout.exercises.push(req.body)
+    program.save()
+    .then(() => {
       res.redirect(`/programs/${program._id}`)
     })
   })
@@ -96,7 +104,7 @@ function deleteProgram(req, res) {
   })
 }
 
-function deleteExerciseFromProgram(req, res) {
+function deleteExerciseFromWorkout(req, res) {
   Program.findById(req.params.programId)
   .then(program => {
     program.exercises.id(req.params.exerciseId).deleteOne()
@@ -145,8 +153,9 @@ export {
   create,
   index,
   show,
-  createExerciseSchemaWithinProgram,
-  deleteExerciseFromProgram,
+  createWorkout,
+  addExerciseToWorkout,
+  deleteExerciseFromWorkout,
   deleteProgram as delete,
   edit,
   update,

@@ -8,10 +8,11 @@ router.get('/new', programsCtrl.new)
 router.get('/:programId', programsCtrl.show)
 router.get('/:programId/edit', programsCtrl.edit)
 router.post('/', programsCtrl.create)
-router.post('/:programId/exercises', programsCtrl.createExerciseSchemaWithinProgram)
+router.post('/:programId/workouts', programsCtrl.createWorkout)
+router.post('/:programId/workouts/:workoutId/exercises', programsCtrl.addExerciseToWorkout)
 router.put('/:programId', programsCtrl.update)
 router.delete('/:programId', programsCtrl.delete)
-router.delete('/:programId/exercises/:exerciseId', programsCtrl.deleteExerciseFromProgram)
+router.delete('/:programId/workouts/:workoutId/exercises/:exerciseId', programsCtrl.deleteExerciseFromWorkout)
 
 export {
   router
