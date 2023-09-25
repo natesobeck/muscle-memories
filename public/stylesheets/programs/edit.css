@@ -1,4 +1,4 @@
-#new-program-form form {
+#edit-program-form form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,7 +57,7 @@ select {
     'Helvetica Neue', sans-serif;
 }
 
-.new-program-divider {
+.edit-program-divider {
   border-top: 1px dotted #9a031e;
   width: 75%;
   margin-top: 15px;

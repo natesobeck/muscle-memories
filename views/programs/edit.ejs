@@ -1,34 +1,40 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/programs/edit.css">
 <%- include('../partials/nav') %>
 
 <h1 class="nav-buffer">Edit <%= program.name %></h1>
 <% if (program.addedBy._id.equals(user?.profile._id)) { %>
-  <form method="POST" action="/programs/<%= program._id %>?_method=PUT">
-    <label for="program-name-input">Program Name:</label>
-    <input type="text" name="name" id="program-name-input" value="<%= program.name %>">
-    <label for="days-per-week-select">Days Per Week:</label>
-    <select name="daysPerWeek" id="days-per-week-select">
-      <option value="<%= program.daysPerWeek %>"><%= program.daysPerWeek %></option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-    </select>
-    <label for="split-select">Split:</label>
-    <select name="split" id="split-select" value="<%= program.split %>">
-      <option><%= program.split %></option>
-      <option value="Push/Pull/Legs">Push/Pull/Legs</option>
-      <option value="Upper/Lower">Upper/Lower</option>
-      <option value="Full Body">Full Body</option>
-      <option value="Other">Other</option>
-    </select>
-    <label for="program-note-input">Additional Notes:</label>
-    <input type="text" name="note" id="program-note-input" value="<%= program.note %>">
-    <button type="submit">Save</button>
-  </form>
+  <div id="edit-program-form">
+    <form method="POST" action="/programs/<%= program._id %>?_method=PUT">
+      <label for="program-name-input">Program Name:</label>
+      <input type="text" name="name" id="program-name-input" value="<%= program.name %>">
+      <div class="edit-program-divider"></div>
+      <label for="days-per-week-select">Days Per Week:</label>
+      <select name="daysPerWeek" id="days-per-week-select">
+        <option value="<%= program.daysPerWeek %>"><%= program.daysPerWeek %></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+      <div class="edit-program-divider"></div>
+      <label for="split-select">Split:</label>
+      <select name="split" id="split-select" value="<%= program.split %>">
+        <option><%= program.split %></option>
+        <option value="Push/Pull/Legs">Push/Pull/Legs</option>
+        <option value="Upper/Lower">Upper/Lower</option>
+        <option value="Full Body">Full Body</option>
+        <option value="Other">Other</option>
+      </select>
+      <div class="edit-program-divider"></div>
+      <label for="program-note-textarea">Additional Notes:</label>
+      <textarea type="text" name="note" id="program-note-tezxtarea" value="<%= program.note %>"><%= program.note %></textarea>
+      <button class="submit-btn" type="submit">Save</button>
+    </form>
+  </div>
 <% } else { %>
   <h3>You are not logged in as the user who created the program, so it can't be edited. If this is you, please sign in!</h3>
 <% } %>
