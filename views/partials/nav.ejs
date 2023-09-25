@@ -5,25 +5,25 @@
 <body>
   <nav>
     <div class="nav-item-container">
-      <a href="/">
+      <a class="nav-item" href="/">
         HOME
       </a>
     </div>
     <div class="nav-divider"></div>
     <div class="nav-item-container">
-      <a href="/programs">
+      <a class="nav-item" href="/programs">
         ALL PROGRAMS
       </a>
     </div>
     <div class="nav-divider"></div>
     <div class="nav-item-container">
-      <a href="/programs/new">
+      <a class="nav-item" href="/programs/new">
         ADD PROGRAM
       </a>
     </div>
     <div class="nav-divider"></div>
     <div class="nav-item-container">
-      <a href="/exercises/new">
+      <a class="nav-item" href="/exercises/new">
         EXERCISES
       </a>
     </div>
@@ -31,7 +31,7 @@
     <% if (user) { %>
       <div class="nav-item-container">
         <a href="/auth/logout" class="right">
-          <button  id="logout-btn" type="submit">Logout</button>
+          <button id="logout-btn" type="submit">Logout</button>
         </a>
       </div>
     <% } else { %>

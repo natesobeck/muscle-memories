@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
 /* The Universal Selector */
@@ -12,7 +14,6 @@ html {
 }
 
 main {
-  width: 90vmin;
   margin-left: 5vmin;
   display: flex;
   align-items: center;
@@ -21,6 +22,7 @@ main {
 }
 
 body {
+  width: 90vw;
   background-color: lightgray;
   color: #343a40;
   /* Use a system font, if none are available use any found sans-sarif font */
@@ -39,7 +41,7 @@ nav {
   min-height: 60px;
   font-size: .6rem;
   border-bottom: 2px solid #ffd500;
-  width: 100vmin;
+  width: 90vw;
   position: fixed;
 }
 
@@ -49,6 +51,13 @@ nav a {
   margin-left: auto;
   text-align: center;
   text-justify: center;
+}
+
+nav .nav-item:hover {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ffd500;
+  font-size: .7rem;
+  cursor: pointer;
 }
 
 .nav-item-container {
@@ -71,6 +80,45 @@ a {
   font-weight: bold;
 }
 
-h1 {
+.nav-buffer {
   padding-top: 60px;
+  text-align: center;
+}
+
+#logout-btn {
+  font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+    'Helvetica Neue', sans-serif;
+  padding: 3px;
+  border-radius: 5px;
+  color: white;
+  background-color: #4C8BF5;
+  border: 1px solid white;
+  font-size: 11px;
+}
+
+#logout-btn:hover {
+  color: #4C8BF5;
+  background-color: white;
+  cursor: pointer;
+}
+
+.step-a:hover {
+  border-bottom: 2px solid #ffd500;
+  font-size: 1.3em;
+}
+
+#step-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #ffd500;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#step-container div {
+  font-weight: bold;
+  text-align: center;
+  text-justify: center;
 }

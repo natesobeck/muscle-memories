@@ -1,6 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<h1 class="nav-buffer">Edit <%= program.name %></h1>
 <% if (program.addedBy._id.equals(user?.profile._id)) { %>
   <form method="POST" action="/programs/<%= program._id %>?_method=PUT">
     <label for="program-name-input">Program Name:</label>

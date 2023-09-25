@@ -1,11 +1,16 @@
 .program-card {
-  width: 90vmin;
+  width: 90vw;
   font-size: 12px;
   text-align: center;
   text-justify: center;
   border: 3px solid #9a031e;
-  padding: 10px;
   background-color: rgb(236, 236, 236);
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 0px;
 }
 
 .btn-container {
@@ -23,4 +28,64 @@ th {
   border-bottom: 2px solid darkgray;
 }
 
+.note-container {
+  width: 100%;
+  padding: 10px 0px 5px 0px;
+}
 
+.note-container div {
+  margin: 5px 0px;
+  padding: 10px 0px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 1px solid darkgray;
+}
+
+strong {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: darkgray;
+}
+
+h4 {
+  margin-bottom: 30px;
+}
+
+.delete-btn {
+  background-color: #b00107;
+  color: whitesmoke;
+  border: 2px solid darkgray;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: 2px solid gold;
+}
+
+.edit-btn {
+  background-color: #12657a;
+  color: whitesmoke;
+  border: 2px solid darkgray;
+}
+
+.edit-btn:hover {
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+  border: 2px solid gold;
+}
+
+.details-btn {
+  background-color: #613f75;
+  color: whitesmoke;
+  border: 2px solid darkgray;
+}
+
+.details-btn:hover {
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+  border: 2px solid gold;
+}

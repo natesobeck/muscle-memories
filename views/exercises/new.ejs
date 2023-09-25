@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
+  <h1 class="nav-buffer"><%= title %></h1>
   <% if (user) { %>
     <form id="new-exercise-form" action="/exercises" method="POST">
       <label for="exercise-name-input">Exercise Name:</label>

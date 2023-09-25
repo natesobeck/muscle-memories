@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>User Programs</h1>
+  <h1 class="nav-buffer">User Programs</h1>
   <% programs.forEach(program => { %>
     <div class="program-card">
       <table>
@@ -12,29 +12,33 @@
           <th>Split</th>
           <th>Days Per Week</th>
           <th>Added By</th>
-          <th>Additional Note</th>
         </tr>
         <tr>
           <td><%= program.name %></td>
           <td><%= program.split %></td>
           <td><%= program.daysPerWeek %></td>
           <td><%= program.addedBy.name %></td>
-          <td><%= program.note %></td>
         </tr>
       </table>
+      <div class="note-container">
+        <strong>
+          <em>A note from <%= program.addedBy.name %>:</em>
+        </strong>
+        <div><%= program.note %></div>
+      </div>
       <div class="btn-container">
         <a href="/programs/<%= program._id %>">
-          <button class="program-index-btn details-btn">Details</button>
+          <button class="program-index-btn details-btn">Details 🔎</button>
         </a>
         <% if (program.addedBy._id.equals(user?.profile._id)) { %>
           <a href="/programs/<%= program._id %>/edit">
-            <button type="submit" class="program-index-btn edit-btn">Edit</button>
+            <button type="submit" class="program-index-btn edit-btn">Edit ✏️</button>
           </a>
           <form
               action="/programs/<%= program._id %>?_method=DELETE"
               method="POST"
             >
-            <button type="submit" class="program-index-btn delete-btn">Delete</button>
+            <button type="submit" class="program-index-btn delete-btn">Delete 🗑️</button>
           </form>
         <% } %>
       </div>
