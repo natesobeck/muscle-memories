@@ -35,8 +35,8 @@
             <tr>
               <th>Name</th>
               <th>Sets</th>
-              <th>Reps or Rep Range</th>
-              <th>RPE/RIR</th>
+              <th>Reps</th>
+              <th>RPE</th>
               <th>Tempo</th>
               <% if (program.addedBy._id.equals(user?.profile._id) && program.workouts.length) { %>
                 <th></th>
@@ -45,7 +45,7 @@
             </tr>
             <% workout.exercises.forEach(exercise => { %>
               <tr>
-                <td><%= exercise.exercise.equipment %> <%= exercise.exercise.name %></td>
+                <td><em><%= exercise.exercise.equipment %> <%= exercise.exercise.name %></em></td>
                 <td><%= exercise.sets %></td>
                 <td><%= exercise.reps %></td>
                 <td><%= exercise.rpe %></td>
@@ -95,19 +95,22 @@
               <label for="tempo-input"><em>Tempo: </em></label>
               <input type="text" id="tempo-input" name="tempo">
             </div>
-            <button class="btn add-exercise-btn" type="submit">📝</button>
-          </form>
+            <button class="add-exercise-btn btn" type="submit">+
         </div>
       <% } %>
       <div class="show-program-divider"></div>
       <% }) %>
     <% if (program.addedBy._id.equals(user?.profile._id)) { %>
       <h3>Add a workout to the program:</h3>
-      <form action="/programs/<%= program._id %>/workouts" method="POST">
-        <label for="workout-name-input">Name (i.e. Upper 1, Push, etc.): </label>
-        <input type="string" name="name" id="workout-name-input">
-        <button type="submit">Add Workout</button>
-      </form>
+      <div id="add-workout-form-container">
+        <form class="add-workout-form" action="/programs/<%= program._id %>/workouts" method="POST">
+          <div class="add-workout-form-item-container">
+            <label for="workout-name-input">Name (i.e. Upper 1, Push, etc.): </label>
+            <input type="string" name="name" id="workout-name-input">
+            <button class="add-exercise-btn btn" type="submit">+</button>
+          </div>
+        </form>
+      </div>
     <% } %>
     <div class="show-program-divider"></div>
     <h2>Reviews</h2>

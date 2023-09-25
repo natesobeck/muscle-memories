@@ -30,9 +30,11 @@
     <div class="nav-divider"></div>
     <% if (user) { %>
       <div class="nav-item-container">
-        <a href="/auth/logout" class="right">
-          <button id="logout-btn" type="submit">Logout</button>
-        </a>
+        <div class="logout-container">
+          <a href="/auth/logout" class="right">
+            <button id="logout-btn" type="submit">Logout 👋</button>
+          </a>
+        </div>
       </div>
     <% } else { %>
       <div class="nav-item-container">
@@ -45,11 +47,11 @@
         ></div>
         <div 
           class="g_id_signin right"
-          data-type="standard"
+          data-type="icon"
           data-size="large"
-          data-theme="outline"
+          data-theme="filled_blue"
           data-text="sign_in_with"
-          data-shape="rectangular"
+          data-shape="circle"
           data-logo_alignment="left"
         ></div>
       </div>
