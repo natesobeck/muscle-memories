@@ -39,7 +39,6 @@ const individualWorkoutSchema = new Schema ({
   name: String,
   exercises: {
     type: [programExerciseSchema],
-    default: []
   }
 }, {
   timestamps: true

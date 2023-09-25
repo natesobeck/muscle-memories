@@ -95,7 +95,8 @@
               <label for="tempo-input"><em>Tempo: </em></label>
               <input type="text" id="tempo-input" name="tempo">
             </div>
-            <button class="add-exercise-btn btn" type="submit">+
+            <button class="add-exercise-btn btn" type="submit">+</button>
+          </form>
         </div>
       <% } %>
       <div class="show-program-divider"></div>
@@ -113,29 +114,38 @@
       </div>
     <% } %>
     <div class="show-program-divider"></div>
-    <h2>Reviews</h2>
+    <h2>Reviews:</h2>
     <% if (user) { %>
-      <form action="/programs/<%= program._id %>/reviews" method="POST">
-        <label for="content-text">Review: </label>
-        <textarea name="content" id="content-text"></textarea>
-        <label for="rating-select">Rating: </label>
-        <select name="rating" id="rating-select">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5" selected>5</option>
-        </select>
-        <button type="submit">Add Review</button>
-      </form>
+      <div id="new-review-container">
+        <form action="/programs/<%= program._id %>/reviews" method="POST">
+          <div id="review-sub-container">
+            <div class="review-pair">
+              <label for="content-text">Let <%= program.addedBy.name %> know what you think of the program! </label>
+              <textarea name="content" id="content-text"></textarea>
+            </div>
+            <div class="review-pair">
+              <label for="rating-select"><strong><em>Rating: </em></strong></label>
+              <select name="rating" id="rating-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+              </select>
+            </div>
+          </div>
+          <button class="add-exercise-btn btn" type="submit">+</button>
+        </form>
+      </div>
     <% } else { %>
       <h4>Please sign in to add a review.</h4>
     <% } %>
     <% if (program.reviews.length) { %>
+      <div class="show-program-divider"></div>
       <% program.reviews.forEach(review => { %>
         <div class="review-card">
-          <h5>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleDateString()  %></h5>
-          <p>Rating: <%= review.rating %></p>
+          <h4>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleDateString()  %></h4>
+          <p class="rating-text"><em>Rating: <%= review.rating %></em></p>
           <p><%= review.content %></p>
         </div>
       <% }) %>

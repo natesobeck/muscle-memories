@@ -1,61 +1,66 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/exercises/new.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1 class="nav-buffer"><%= title %></h1>
-  <% if (user) { %>
-    <form id="new-exercise-form" action="/exercises" method="POST">
-      <label for="exercise-name-input">Exercise Name:</label>
-      <input type="text" name="name" id="exercise-name-input">
-      <label for="equipment-select">Equipment:</label>
-      <select name="equipment" id="equipment-select">
-        <option value="Barbell">Barbell</option>
-        <option value="Dumbbell">Dumbbell</option>
-        <option value="Cable">Cable</option>
-        <option value="Machine">Machine</option>
-        <option value="Bodyweight">Bodyweight</option>
-        <option value="Other">Other</option>
-      </select>
-      <label for="main-target-input">Main Targeted Muscles:</label>
-      <input type="text" name="mainTargetedGroup" id="main-target-input">
-      <label for="secondary-target-input">Secondary Targeted Muscles:</label>
-      <input type="text"  name="secondaryTargetedGroup" id="secondary-target-input">
-      <label for="fatigue-select">Estimated Fatigue Cost:</label>
-      <select name="fatigueCost" id="fatigue-select">
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-      </select>
-      <label for="note-input">Additional notes:</label>
-      <input type="text" name="note" id="note-input">
-      <button type="submit">Add Exercise</button>
-    </form>
-  <% } else { %>
-    <h3>Please sign in to add exercises to the site.</h1>
-  <% } %>
-  <h1>Exercise List</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Equipment</th>
-        <th>Main Muscles Targeted</th>
-        <th>Secondary Muscles Targeted</th>
-        <th>Additional Note</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% exercises.forEach(exercise => { %>
-        <tr>
-          <td><%= exercise.name %></td>
-          <td><%= exercise.equipment %></td>
-          <td><%= exercise.mainTargetedGroup %></td>
-          <td><%= exercise.secondaryTargetedGroup %></td>
-          <td><%= exercise.note %></td>
-        </tr>
-      <% }) %>
-    </tbody>
-  </table>
+  <div id="exercise-page-body">
+    <% if (user) { %>
+      <form id="new-exercise-form" action="/exercises" method="POST">
+        <label for="exercise-name-input">Exercise Name:</label>
+        <input type="text" name="name" id="exercise-name-input">
+        <label for="equipment-select">Equipment:</label>
+        <select name="equipment" id="equipment-select">
+          <option value="Barbell">Barbell</option>
+          <option value="Dumbbell">Dumbbell</option>
+          <option value="Cable">Cable</option>
+          <option value="Machine">Machine</option>
+          <option value="Bodyweight">Bodyweight</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="main-target-input">Main Targeted Muscles:</label>
+        <input type="text" name="mainTargetedGroup" id="main-target-input">
+        <label for="secondary-target-input">Secondary Targeted Muscles:</label>
+        <input type="text"  name="secondaryTargetedGroup" id="secondary-target-input">
+        <label for="fatigue-select">Estimated Fatigue Cost:</label>
+        <select name="fatigueCost" id="fatigue-select">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <label for="note-input">Additional Note:</label>
+        <input type="text" name="note" id="note-input">
+        <button class="add-exercise-btn btn" type="submit">+</button>
+      </form>
+    <% } else { %>
+      <h3>Please sign in to add exercises to the site.</h1>
+    <% } %>
+    <h2>All Exercises</h2>
+    <div id="exercise-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Equipment</th>
+            <th>Main Muscles Targeted</th>
+            <th>Secondary Muscles Targeted</th>
+            <th>Additional Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% exercises.forEach(exercise => { %>
+            <tr>
+              <td><%= exercise.name %></td>
+              <td><%= exercise.equipment %></td>
+              <td><%= exercise.mainTargetedGroup %></td>
+              <td><%= exercise.secondaryTargetedGroup %></td>
+              <td><%= exercise.note %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
