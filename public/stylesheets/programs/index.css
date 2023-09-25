@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 0px;
+  margin-bottom: 20px;
 }
 
 .btn-container {

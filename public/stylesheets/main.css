@@ -14,7 +14,6 @@ html {
 }
 
 main {
-  margin-left: 5vmin;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,6 +82,10 @@ a {
 .nav-buffer {
   padding-top: 60px;
   text-align: center;
+  text-decoration: underline;
+  text-decoration-color: darkgray;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
 }
 
 #logout-btn {
@@ -121,4 +124,10 @@ a {
   font-weight: bold;
   text-align: center;
   text-justify: center;
+}
+
+#step-container div em {
+  text-decoration: underline;
+  text-decoration-color: #9a031e;
+  text-decoration-thickness: 2px;
 }
