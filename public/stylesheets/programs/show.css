@@ -268,12 +268,17 @@ h2 {
   font-size: 14px;
 }
 
+#avg-review {
+  margin: 15px 0px;
+}
+
 .review-content-container {
   border: 1px solid #9a031e;
   padding: 0px 15px;
   border-radius: 10px;
   margin-bottom : 10px;
   background-color: white;
+  font-size: 14px;
 }
 
 @media (min-width: 900px) {

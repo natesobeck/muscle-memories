@@ -55,6 +55,14 @@ nav a {
   text-justify: center;
 }
 
+nav img {
+  width: 150px;
+  position: absolute;
+  left: 2%;
+  top: 22%;
+  border-radius: 10px;
+}
+
 nav .nav-item:hover {
   padding-bottom: 5px;
   border-bottom: 3px solid gold;
@@ -134,4 +142,16 @@ a {
   text-decoration: underline;
   text-decoration-color: #9a031e;
   text-decoration-thickness: 2px;
+}
+
+@media (min-width: 600px) {
+  nav {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  nav {
+    font-size: 1rem
+  }
 }
