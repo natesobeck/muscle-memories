@@ -17,6 +17,12 @@
     <% } else { %>
       <h4>Please sign in to add a post to this thread.</h4>
     <% } %>
+    <% post.comments.forEach(comment => { %>
+      <%= console.log(comment) %>
+      <div class="comment-container">
+        <%= comment.content %>
+      </div>
+    <% }) %>
   </div>
 </main>
 

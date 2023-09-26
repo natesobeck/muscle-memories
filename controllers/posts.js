@@ -53,9 +53,30 @@ function deletePost(req, res) {
   })
 }
 
+function createComment(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    const comment = program.workouts.id(req.params.commentId)
+    post.comments.push(comment)
+    post.save()
+    .then(() => {
+      res.redirect(`/posts/${post._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/posts/${post._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 export {
   index,
   create,
   show,
   deletePost as delete,
+  createComment,
 }
