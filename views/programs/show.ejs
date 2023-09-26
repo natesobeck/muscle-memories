@@ -142,6 +142,7 @@
     <% } %>
     <% if (program.reviews.length) { %>
       <div class="show-program-divider"></div>
+      <%=  %>
       <% program.reviews.forEach(review => { %>
         <div class="review-card">
           <h4>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleDateString()  %></h4>
