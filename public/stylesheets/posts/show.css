@@ -1,0 +1,66 @@
+#thread-container {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #9a031e;
+  border-radius: 15px;
+  padding: 15px 0px;
+  background-color: rgb(236, 236, 236);
+}
+
+#add-comment-container {
+  width: 75%;
+}
+
+#add-comment-container h4 {
+  margin: 5px 0px;
+}
+
+#add-comment-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#add-comment-container textarea {
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 1px solid darkgray;
+  width: 75%;
+  margin: 5px 0px;
+  font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+    'Helvetica Neue', sans-serif;
+}
+
+#add-comment-subcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn {
+  padding: 5px 10px;
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+
+.add-btn {
+  background-color: white;
+  padding: 0px 5px;;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.add-btn:hover {
+  cursor: pointer;
+  background-color: #4CAF50;
+  border: 2px solid gold;
+  color: white;
+}

@@ -1,7 +1,23 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/posts/show.css">
 <%- include('../partials/nav') %>
-
-<h2><%= title %></h2>
+<main>
+  <h1 class="nav-buffer"><%= post.name %></h1>
+  <div id="thread-container">
+    <% if (user) { %>
+      <div id="add-comment-container">
+        <form>
+          <h4>Add a comment to this thread: </h4>
+          <div id="add-comment-subcontainer">
+            <textarea name="content"></textarea>
+            <button class="add-btn btn" type="submit">+</button>
+          </div>
+        </form>
+      </div>
+    <% } else { %>
+      <h4>Please sign in to add a post to this thread.</h4>
+    <% } %>
+  </div>
+</main>
 
 <%- include('../partials/footer') %>

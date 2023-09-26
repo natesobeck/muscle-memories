@@ -14,8 +14,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9a031e;
   margin: 15px 0px;
+}
+
+.post-container a {
+  color: #9a031e;
+}
+
+.post-container a:hover {
+  font-size: 1.3em;
+  border-bottom: 2px solid gold;
 }
 
 .btn {

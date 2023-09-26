@@ -71,7 +71,6 @@ nav .nav-item:hover {
 }
 
 .nav-item-container {
-  width: 15%;
   display: flex;
   justify-content: right;
 }
@@ -79,8 +78,7 @@ nav .nav-item:hover {
 .nav-divider {
   border-right: 2px solid gold;
   height: 35px;
-  background: white;
-  margin: 0px 7px;
+  margin: 0px 15px;
 }
 
 a {

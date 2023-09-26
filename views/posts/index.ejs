@@ -20,7 +20,7 @@
     <% posts.forEach(post => { %>
       <div class="post-divider"></div>
       <div class="post-container">
-        <div><%= post.name %></div>
+        <div><a href="/posts/<%= post._id %>"><%= post.name %></a> posted by <%= post.author.name %></div>
         <% if (post.author._id.equals(user?.profile._id)) { %>
           <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
             <button class="delete-post-btn btn" ="submit">🗑️</button>
