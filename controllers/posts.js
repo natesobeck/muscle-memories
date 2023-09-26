@@ -27,7 +27,19 @@ function create(req, res) {
   })
 }
 
+function deletePost(req, res) {
+  Post.findByIdAndDelete(req.params.postId)
+  .then(post => {
+    res.redirect('/posts')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   create,
+  deletePost as delete,
 }

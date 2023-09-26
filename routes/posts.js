@@ -6,6 +6,7 @@ const router = Router()
 
 router.get('/', postsCtrl.index)
 router.post('/', postsCtrl.create)
+router.delete('/:postId', postsCtrl.delete)
 
 export {
   router
