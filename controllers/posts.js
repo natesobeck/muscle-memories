@@ -27,6 +27,21 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Post.findById(req.params.postId)
+  .populate('author')
+  .then(post => {
+    res.render('posts/show', {
+      post,
+      title: 'Post Details'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 function deletePost(req, res) {
   Post.findByIdAndDelete(req.params.postId)
   .then(post => {
@@ -41,5 +56,6 @@ function deletePost(req, res) {
 export {
   index,
   create,
+  show,
   deletePost as delete,
 }
