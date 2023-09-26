@@ -147,6 +147,11 @@
           <h4>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleDateString()  %></h4>
           <p class="rating-text"><em>Rating: <%= review.rating %></em></p>
           <p><%= review.content %></p>
+          <% if (program.addedBy._id.equals(user?.profile._id)) { %>
+            <form action="/programs/<%= program._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button class="delete-exercise-btn" type="submit">🗑️</button>
+            </form>
+          <% } %>
         </div>
       <% }) %>
     <% } else { %>
