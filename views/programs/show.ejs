@@ -167,10 +167,7 @@
         <a href="/programs/<%= program._id %>/edit">
           <button class="edit-btn btn" type="submit">Edit ✏️</button>
         </a>
-        <form
-          action="/programs/<%= program._id %>?_method=DELETE"
-          method="POST"
-        >
+        <form action="/programs/<%= program._id %>?_method=DELETE" method="POST">
           <button class="delete-btn btn" ="submit">Delete 🗑️</button>
         </form>
       </div>

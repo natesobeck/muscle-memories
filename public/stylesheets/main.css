@@ -73,7 +73,7 @@ nav .nav-item:hover {
 .nav-item-container {
   width: 15%;
   display: flex;
-  justify-content:center;
+  justify-content: right;
 }
 
 .nav-divider {

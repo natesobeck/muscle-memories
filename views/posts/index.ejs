@@ -1,6 +1,34 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/posts/index.css">
+<%- include('../partials/nav') %>
 
+<main>
+  <h1 class="nav-buffer"><%= title %></h1>
+  <div class="posts-container">
+    <% if (user) { %>
+    <h2>Add a forum post: </h2>
+    <div id="add-post-container">
+      <form action="/posts" method="POST">
+        <label for="post-create-input">Title of post: </label>
+        <input type="text" name="name" id="post-create-input">
+        <button class="add-btn btn" type="submit">+</button>
+      </form>
+    </div>
+    <% } else { %>
+      <h4>Please sign in to add a post to the forum.</h4>
+    <% } %>
+    <% posts.forEach(post => { %>
+      <div class="post-divider"></div>
+      <div class="post-container">
+        <div><%= post.name %></div>
+        <% if (post.author._id.equals(user?.profile._id)) { %>
+          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <button class="delete-post-btn btn" ="submit">🗑️</button>
+          </form>
+        <% } %>
+      </div>
+    <% }) %>
+  </div>
+</main>
 
-
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
