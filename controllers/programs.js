@@ -166,7 +166,6 @@ function createReview(req, res) {
   req.body.author = req.user.profile._id
   Program.findById(req.params.programId)
   .then(program => {
-    console.log(`PROGRAM: ${program}`)
     program.reviews.push(req.body)
     program.save()
     .then(() => {
@@ -183,16 +182,37 @@ function createReview(req, res) {
   })
 }
 
+function deleteReview(req, res) {
+  Program.findById(req.params.programId)
+  .then(program => {
+    const reviewToDelete = program.reviews.id(req.params.reviewId)
+    reviewToDelete.deleteOne()
+    program.save()
+    .then(() => {
+      res.redirect(`/programs/${program._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/programs/${program._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/programs`)
+  })
+}
+
 export {
   newProgram as new,
   create,
   index,
   show,
-  createWorkout,
-  addExerciseToWorkout,
-  deleteExerciseFromWorkout,
   deleteProgram as delete,
   edit,
   update,
+  createWorkout,
+  addExerciseToWorkout,
+  deleteExerciseFromWorkout,
   createReview,
+  deleteReview,
 }

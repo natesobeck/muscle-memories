@@ -39,7 +39,7 @@ nav {
   padding: 10px;
   min-height: 60px;
   font-size: .6rem;
-  border-bottom: 2px solid #ffd500;
+  border-bottom: 5px solid gold;
   width: 90vw;
   position: fixed;
   border-bottom-left-radius: 15px;
@@ -57,7 +57,7 @@ nav a {
 
 nav .nav-item:hover {
   padding-bottom: 5px;
-  border-bottom: 3px solid #ffd500;
+  border-bottom: 3px solid gold;
   font-size: .7rem;
   cursor: pointer;
 }
@@ -69,7 +69,7 @@ nav .nav-item:hover {
 }
 
 .nav-divider {
-  border-right: 2px solid #ffd500;
+  border-right: 2px solid gold;
   height: 35px;
   background: white;
   margin: 0px 7px;
@@ -93,22 +93,23 @@ a {
 #logout-btn {
   font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
-  padding: 8px;
+  padding: 7px 10px;
   color: white;
   background-color: #4C8BF5;
   border: 2px solid white;
-  font-size: 11px;
-  border-radius: 15px;
+  font-size: 16px;
+  border-radius: 50%;
 }
 
 #logout-btn:hover {
   color: #4C8BF5;
   background-color: white;
   cursor: pointer;
+  border: 2px solid #4C8BF5;
 }
 
 .step-a:hover {
-  border-bottom: 2px solid #ffd500;
+  border-bottom: 2px solid gold;
   font-size: 1.3em;
 }
 
@@ -117,7 +118,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px dashed #ffd500;
+  border: 2px dashed gold;
   border-radius: 10px;
   padding: 10px;
   filter: drop-shadow(5px 5px 5px gray);
