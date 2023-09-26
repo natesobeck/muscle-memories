@@ -142,19 +142,23 @@
     <% } %>
     <% if (program.reviews.length) { %>
       <div class="show-program-divider"></div>
-      <%=  %>
+      <% let total = 0 %>
       <% program.reviews.forEach(review => { %>
+        <% total += review.rating %>
         <div class="review-card">
           <h4>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleDateString()  %></h4>
-          <p class="rating-text"><em>Rating: <%= review.rating %></em></p>
-          <p><%= review.content %></p>
+          <div class="rating-text"><em>Rating: <%= review.rating %></em></div>
+          <div class="review-content-container">
+            <p><%= review.content %></p>
+          </div>
           <% if (program.addedBy._id.equals(user?.profile._id)) { %>
             <form action="/programs/<%= program._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
               <button class="delete-exercise-btn" type="submit">🗑️</button>
             </form>
           <% } %>
         </div>
-      <% }) %>
+        <% }) %>
+        <div id="avg-review">Users rate this program <strong><%= (total / program.reviews.length).toFixed(1) %></strong> out of <strong>5.0</strong> based on <%= program.reviews.length %> reviews!</div>
     <% } else { %>
       <h4>There are no reviews yet! Already ran this program? Add one!</h4>
     <% } %>
