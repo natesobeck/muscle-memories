@@ -6,23 +6,22 @@
   <div id="thread-container">
     <% if (user) { %>
       <div id="add-comment-container">
-        <form>
-          <h4>Add a comment to this thread: </h4>
-          <div id="add-comment-subcontainer">
-            <textarea name="content"></textarea>
-            <button class="add-btn btn" type="submit">+</button>
-          </div>
-        </form>
+        <h4>Add a comment to this thread: </h4>
+          <form method="POST" action="/posts/<%= post._id %>/comments">
+              <textarea name="content"></textarea>
+              <button class="add-btn btn" type="submit">+</button>
+          </form>
       </div>
     <% } else { %>
-      <h4>Please sign in to add a post to this thread.</h4>
+      <h4>Please sign in to add a comment to this thread.</h4>
     <% } %>
-    <% post.comments.forEach(comment => { %>
-      <%= console.log(comment) %>
-      <div class="comment-container">
-        <%= comment.content %>
-      </div>
-    <% }) %>
+    <% if (post.comments.length) { %>
+      <% post.comments.forEach(comment => { %>
+        <div class="comment-container">
+          <%= comment.content %>
+        </div>
+      <% }) %>
+    <% } %>
   </div>
 </main>
 

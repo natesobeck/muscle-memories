@@ -1,5 +1,5 @@
 #show-container {
-  width: 90vw;
+  width: 100%; 
   font-size: 12px;
   text-align: center;
   text-justify: center;
@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 20px;filter: drop-shadow(5px 5px 3px gray);
 }
 
 .btn {
