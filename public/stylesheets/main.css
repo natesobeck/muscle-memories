@@ -93,15 +93,15 @@ a {
 }
 
 .page-header {
-  border-right: 2px solid gray;
-  border-bottom: 2px solid gray;
+  border-right: 2px solid #9a031e;
+  border-bottom: 2px solid #9a031e;
   font-family: 'Kalam', 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 25px 0px 15px 0px;
   padding: 10px 20px;
   border-radius: 25px;
-  font-size: 2.1rem;
-  background-color: rgb(236, 236, 236);
+  font-size: 1.8rem;
+  background-color: whitesmoke;
   filter: drop-shadow(5px 5px 3px gray);
 }
 
@@ -167,10 +167,11 @@ a {
   border-right: 3px solid #9a031e;
   border-bottom: 3px solid #9a031e;
   margin: 25px 0px 15px 0px;
-  padding: 20px;
+  padding: 30px 20px;
   border-radius: 25px;
   background-color: whitesmoke;
   filter: drop-shadow(5px 5px 3px gray);
+  text-align: center;
 }
 
 @media (min-width: 500px) {

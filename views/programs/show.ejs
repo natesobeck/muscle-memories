@@ -7,21 +7,11 @@
   <div class="nav-buffer"></div>
   <h1 class="page-header"><%= program.name %> Details</h1>
   <div id="show-container">
-    <h2>Basic Overview:</h2>
-    <table>
-      <tr>
-        <th>Program Name</th>
-        <th>Split</th>
-        <th>Days Per Week</th>
-        <th>Added By</th>
-      </tr>
-      <tr>
-        <td><%= program.name %></td>
-        <td><%= program.split %></td>
-        <td><%= program.daysPerWeek %></td>
-        <td><%= program.addedBy.name %></td>
-      </tr>
-    </table>
+      <div id="overview-container">
+        <div class="overview-div"><%= program.split %></div>
+        <div class="overview-div"><%= program.daysPerWeek %> day per week</div>
+        <div class="overview-div">Created by <%= program.addedBy.name %> at <%= program.createdAt.toLocaleDateString() %></div>
+      </div>
     <div class="note-container">
       <strong>
         <em>A note from <%= program.addedBy.name %>:</em>

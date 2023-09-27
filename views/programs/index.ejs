@@ -5,46 +5,46 @@
 <main>
   <div class="nav-buffer"></div>
   <h1 class="page-header">User Programs</h1>
-  <% programs.forEach(program => { %>
-    <div class="program-card">
-      <table>
-        <tr>
-          <th>Program Name</th>
-          <th>Split</th>
-          <th>Days Per Week</th>
-          <th>Added By</th>
-        </tr>
-        <tr>
-          <td><%= program.name %></td>
-          <td><%= program.split %></td>
-          <td><%= program.daysPerWeek %></td>
-          <td><%= program.addedBy.name %></td>
-        </tr>
-      </table>
-      <div class="note-container">
-        <strong>
-          <em>A note from <%= program.addedBy.name %>:</em>
-        </strong>
-        <div><%= program.note %></div>
-      </div>
-      <div class="btn-container">
-        <a href="/programs/<%= program._id %>">
-          <button class="program-index-btn details-btn">🔎</button>
-        </a>
-        <% if (program.addedBy._id.equals(user?.profile._id)) { %>
-          <a href="/programs/<%= program._id %>/edit">
-            <button type="submit" class="program-index-btn edit-btn">✏️</button>
+  <div class="program-index-body">
+    <% programs.forEach(program => { %>
+      <div class="program-card">
+        <table>
+          <tr>
+            <th>Program Name</th>
+            <th>Split</th>
+            <th>Days Per Week</th>
+            <th>Added By</th>
+          </tr>
+          <tr>
+            <td class="program-name"><%= program.name %></td>
+            <td><%= program.split %></td>
+            <td><%= program.daysPerWeek %></td>
+            <td><%= program.addedBy.name %></td>
+          </tr>
+        </table>
+        <div class="note-container">
+            <em>A note from <%= program.addedBy.name %>:</em>
+          <div><%= program.note %></div>
+        </div>
+        <div class="btn-container">
+          <a href="/programs/<%= program._id %>">
+            <button class="program-index-btn details-btn">🔎</button>
           </a>
-          <form
-              action="/programs/<%= program._id %>?_method=DELETE"
-              method="POST"
-            >
-            <button type="submit" class="program-index-btn delete-btn">🗑️</button>
-          </form>
-        <% } %>
+          <% if (program.addedBy._id.equals(user?.profile._id)) { %>
+            <a href="/programs/<%= program._id %>/edit">
+              <button type="submit" class="program-index-btn edit-btn">✏️</button>
+            </a>
+            <form
+                action="/programs/<%= program._id %>?_method=DELETE"
+                method="POST"
+              >
+              <button type="submit" class="program-index-btn delete-btn">🗑️</button>
+            </form>
+          <% } %>
+        </div>
       </div>
-    </div>
-  <% }) %>
+    <% }) %>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
