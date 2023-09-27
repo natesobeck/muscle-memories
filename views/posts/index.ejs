@@ -1,5 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/posts/index.css">
+<script defer src="/edit.js"></script>
 <%- include('../partials/nav') %>
 
 <main>
@@ -20,11 +21,19 @@
     <% posts.forEach(post => { %>
       <div class="post-divider"></div>
       <div class="post-container">
-        <div><a href="/posts/<%= post._id %>"><%= post.name %></a> posted by <%= post.author.name %></div>
         <% if (post.author._id.equals(user?.profile._id)) { %>
-          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-            <button class="delete-post-btn btn" ="submit">🗑️</button>
-          </form>
+          <div class="post-subcontainer">
+          <div><a href="/posts/<%= post._id %>"><%= post.name %></a> posted by <%= post.author.name %></div>
+            <div class="btn-container">
+              <button type="submit" class="edit-btn btn">✏️</button>
+              <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+                <button class="delete-post-btn btn" ="submit">🗑️</button>
+              </form>
+            </div>
+            <form class="edit-form" method="POST" action="/posts/<%= post._id %>?_method=PUT">
+              <input type="text" name="name">
+            </form>
+          </div>
         <% } %>
       </div>
     <% }) %>

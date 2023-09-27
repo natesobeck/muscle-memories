@@ -59,6 +59,27 @@ function deletePost(req, res) {
   })
 }
 
+function updatePost(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    if (post.author.equals(req.user.profile._id)) {
+      post.set(req.body)
+      post.save()
+      .then(() => {
+        res.redirect('/posts')
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/posts')
+      })
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 function createComment(req, res) {
   req.body.author = req.user.profile._id
   Post.findById(req.params.postId)
@@ -126,6 +147,7 @@ export {
   create,
   show,
   deletePost as delete,
+  updatePost,
   createComment,
   updateComment,
   deleteComment,

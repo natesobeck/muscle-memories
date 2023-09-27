@@ -28,17 +28,17 @@
       </div>
       <div class="btn-container">
         <a href="/programs/<%= program._id %>">
-          <button class="program-index-btn details-btn">Details 🔎</button>
+          <button class="program-index-btn details-btn">🔎</button>
         </a>
         <% if (program.addedBy._id.equals(user?.profile._id)) { %>
           <a href="/programs/<%= program._id %>/edit">
-            <button type="submit" class="program-index-btn edit-btn">Edit ✏️</button>
+            <button type="submit" class="program-index-btn edit-btn">✏️</button>
           </a>
           <form
               action="/programs/<%= program._id %>?_method=DELETE"
               method="POST"
             >
-            <button type="submit" class="program-index-btn delete-btn">Delete 🗑️</button>
+            <button type="submit" class="program-index-btn delete-btn">🗑️</button>
           </form>
         <% } %>
       </div>

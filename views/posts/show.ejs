@@ -1,6 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/posts/show.css">
-<script defer src="/stylesheets/edit.js"></script>
+<script defer src="/edit.js"></script>
 <%- include('../partials/nav') %>
 <main>
   <h1 class="nav-buffer"><%= post.name %></h1>
@@ -25,9 +25,9 @@
                 </form>
                 <button type="submit" class="edit-btn btn">✏️</button>
               </div>
-                <form class="edit-form" method="POST" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT">
-                  <input type="text" name="content">
-                </form>
+              <form class="edit-form" method="POST" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT">
+                <input type="text" name="content">
+              </form>
               <% } %>
           </div>
           <% }) %>
