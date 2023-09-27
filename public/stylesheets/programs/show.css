@@ -11,7 +11,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;filter: drop-shadow(5px 5px 3px gray);
+  margin-bottom: 20px;
+  filter: drop-shadow(5px 5px 3px gray);
 }
 
 .btn {
@@ -259,7 +260,7 @@ h2 {
 }
 
 .review-content-container {
-  border: 1px solid #9a031e;
+  border: 1px solid lightgray;
   padding: 0px 15px;
   border-radius: 10px;
   margin-bottom : 10px;
@@ -271,7 +272,7 @@ h2 {
 
 .edit-form {
   display: none;
-  width: 100%;
+  width: 92%;
   align-items: center;
   justify-content: center;
 }
@@ -285,8 +286,6 @@ h2 {
   background-color: white;
   border: 1px solid #9a031e;
 }
-
-
 
 @media (min-width: 900px) {
   .add-exercise-to-workout form{

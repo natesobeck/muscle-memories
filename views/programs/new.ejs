@@ -2,7 +2,8 @@
 <link rel="stylesheet" href="/stylesheets/programs/new.css">
 <%- include('../partials/nav') %>
 <main>
-  <h1 class="nav-buffer">Add a New Program</h1>
+  <div class="nav-buffer"></div>
+  <h1 class="page-header">Add a New Program</h1>
   <% if (user) { %>
     <div id="new-program-form">
       <form method="POST" action="/programs">

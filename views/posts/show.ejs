@@ -3,7 +3,8 @@
 <script defer src="/edit.js"></script>
 <%- include('../partials/nav') %>
 <main>
-  <h1 class="nav-buffer"><%= post.name %></h1>
+  <div class="nav-buffer"></div>
+  <h1 class="page-header"><%= post.name %></h1>
   <div id="thread-container">
     <div id="all-comments-container">
       <% if (post.comments.length) { %>

@@ -3,7 +3,8 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1 class="nav-buffer">Edit <%= program.name %></h1>
+  <div class="nav-buffer"></div>
+  <h1 class="page-header">Edit <%= program.name %></h1>
   <% if (program.addedBy._id.equals(user?.profile._id)) { %>
     <div id="edit-program-form">
       <form method="POST" action="/programs/<%= program._id %>?_method=PUT">

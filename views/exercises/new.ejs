@@ -3,7 +3,8 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1 class="nav-buffer"><%= title %></h1>
+  <div class="nav-buffer"></div>
+  <h1 class="page-header"><%= title %></h1>
   <div id="exercise-page-body">
     <% if (user) { %>
       <form id="new-exercise-form" action="/exercises" method="POST">
