@@ -79,10 +79,15 @@ function createComment(req, res) {
   })
 }
 
+function deleteComment {
+  
+}
+
 export {
   index,
   create,
   show,
   deletePost as delete,
   createComment,
+  deleteComment,
 }

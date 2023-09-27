@@ -7,13 +7,25 @@
     <div id="all-comments-container">
       <% if (post.comments.length) { %>
         <% post.comments.forEach(comment => { %>
-          <div class="comment-container">
-            <div class="comment-info"><span class="author-name"><%= comment.author.name %></span> at <%= comment.createdAt.toLocaleTimeString() %>: </div>
-            <div class="comment-sub-container">
-              <%= comment.content %>
+          <div class="comment-and-btn">
+            <div class="comment-container">
+              <div class="comment-info">
+                <span class="author-name"><%= comment.author.name %></span>
+                at <%= comment.createdAt.toLocaleTimeString() %>: 
+              </div>
+              <div class="comment-sub-container">
+                <%= comment.content %>
+              </div>
+            </div>
+            <div class="btn-container">
+              <% if (post.author._id.equals(user?.profile._id)) { %>
+                <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                  <button type="submit" class="delete-btn btn">🗑️</button>
+                </form>
+              <% } %>
             </div>
           </div>
-        <% }) %>
+          <% }) %>
       <% } else { %>
         <h4>There aren't any comments on this thread yet.</h4>
       <% } %>
