@@ -30,6 +30,12 @@ function create(req, res) {
 function show(req, res) {
   Post.findById(req.params.postId)
   .populate('author')
+  .populate({
+    path: 'comments',
+    populate: {
+      path: 'author'
+    }
+  })
   .then(post => {
     res.render('posts/show', {
       post,
@@ -54,6 +60,7 @@ function deletePost(req, res) {
 }
 
 function createComment(req, res) {
+  req.body.author = req.user.profile._id
   Post.findById(req.params.postId)
   .then(post => {
     post.comments.push(req.body)

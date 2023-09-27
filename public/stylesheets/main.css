@@ -156,21 +156,24 @@ h4.kalam-font {
   margin: 0px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   nav {
     font-size: .8rem;
   }
   nav .nav-item:hover {
     font-size: .9rem;
   }
+  .nav-divider {
+    margin: 0px 10px;
+  }
+}
+
+@media (min-width: 700px) {
   nav img {
     width: 120px;
     height: 25px;
     top: 28%;
     border-radius: 10px;
-  }
-  .nav-divider {
-    margin: 0px 10px;
   }
 }
 
