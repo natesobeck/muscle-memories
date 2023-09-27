@@ -89,13 +89,37 @@ function updateComment(req, res) {
       .then(() => {
         res.redirect(`/posts/${post._id}`)
       })
+      .catch(err => {
+        console.log(err)
+        res.redirect(`/posts/${post._id}`)
+      })
     }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
   })
 }
 
-// deleteComment(req, res) {
-
-// }
+function deleteComment(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    const comment = post.comments.id(req.params.commentId)
+    comment.deleteOne()
+    post.save()
+    .then(() => {
+      res.redirect(`/posts/${post._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/posts/${post._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
 
 export {
   index,
@@ -104,5 +128,5 @@ export {
   deletePost as delete,
   createComment,
   updateComment,
-  // deleteComment,
+  deleteComment,
 }

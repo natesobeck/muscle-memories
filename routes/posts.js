@@ -10,7 +10,7 @@ router.post('/', postsCtrl.create)
 router.post('/:postId/comments/', postsCtrl.createComment)
 router.put('/:postId/comments/:commentId', postsCtrl.updateComment)
 router.delete('/:postId', postsCtrl.delete)
-router.delete('/:postId/comments/:commentId')
+router.delete('/:postId/comments/:commentId', postsCtrl.deleteComment)
 
 export {
   router
