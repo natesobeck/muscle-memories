@@ -202,6 +202,28 @@ function deleteReview(req, res) {
   })
 }
 
+function updateReview(req, res) {
+  Program.findById(req.params.programId)
+  .then(program => {
+    const review = program.reviews.id(req.params.reviewId)
+    if (review.author.equals(req.user.profile._id)) {
+      review.set(req.body)
+      program.save()
+      .then(() => {
+        res.redirect(`/programs/${program._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect(`/programs/${program._id}`)
+      })
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/programs')
+  })
+}
+
 export {
   newProgram as new,
   create,
@@ -215,4 +237,5 @@ export {
   deleteExerciseFromWorkout,
   createReview,
   deleteReview,
+  updateReview
 }

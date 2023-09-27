@@ -15,7 +15,7 @@
 }
 
 .btn {
-  padding: 5px 10px;
+  padding: 2px 5px;
   margin: 0px 5px;
   border-radius: 10px;
 }
@@ -26,9 +26,9 @@
 }
 
 .delete-btn {
-  background-color: #b00107;
-  color: whitesmoke;
-  border: 2px solid darkgray;
+  color: #b00107;
+  background-color: whitesmoke;
+  border: 2px solid #b00107;
 }
 
 .delete-btn:hover {
@@ -38,25 +38,11 @@
   border: 2px solid gold;
 }
 
-.delete-exercise-btn {
-  background-color: whitesmoke;
-  color: whitesmoke;
-  border: 1px solid #b00107;
-  padding: 3px 5px;
-  border-radius: 10px;
-}
-
-.delete-exercise-btn:hover {
-  cursor: pointer;
-  background-color: red;
-  color: white;
-  border: 1px solid gold;
-}
-
 .edit-btn {
-  background-color: #12657a;
-  color: whitesmoke;
-  border: 2px solid darkgray;
+  color: #12657a;
+  background-color: whitesmoke;
+  border: 2px solid #12657a;
+  padding: 2px 5px;
 }
 
 .edit-btn:hover {
@@ -87,7 +73,7 @@ th {
 }
 
 .workout-card {
-  border: 2px solid #9a031e;
+  border: 1px solid #9a031e;
   background-color: whitesmoke;
   width: 80%;
   display: flex;
@@ -279,7 +265,28 @@ h2 {
   margin-bottom : 10px;
   background-color: white;
   font-size: 14px;
+  width: 90%;
+  text-align: left;
 }
+
+.edit-form {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-form input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 15px;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid #9a031e;
+}
+
+
 
 @media (min-width: 900px) {
   .add-exercise-to-workout form{

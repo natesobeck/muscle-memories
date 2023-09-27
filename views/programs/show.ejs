@@ -1,5 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/programs/show.css">
+<script defer src="/edit.js"></script>
 <%- include('../partials/nav') %>
 
 <main>
@@ -146,14 +147,20 @@
       <% program.reviews.forEach(review => { %>
         <% total += review.rating %>
         <div class="review-card">
-          <h4>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleDateString()  %></h4>
+          <h4>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleString()  %></h4>
           <div class="rating-text"><em>Rating: <%= review.rating %></em></div>
           <div class="review-content-container">
             <p><%= review.content %></p>
           </div>
           <% if (program.addedBy._id.equals(user?.profile._id)) { %>
-            <form action="/programs/<%= program._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button class="delete-exercise-btn" type="submit">🗑️</button>
+            <div class="btn-container">
+              <form action="/programs/<%= program._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                <button class="delete-btn btn" type="submit">🗑️</button>
+              </form>
+              <button type="submit" class="edit-btn btn">✏️</button>
+            </div>
+            <form class="edit-form" method="POST" action="/programs/<%= program._id %>/reviews/<%= review._id %>?_method=PUT">
+              <input type="text" name="content">
             </form>
           <% } %>
         </div>
@@ -165,10 +172,10 @@
     <% if (program.addedBy._id.equals(user?.profile._id)) { %>
       <div class="btn-container">
         <a href="/programs/<%= program._id %>/edit">
-          <button class="edit-btn btn" type="submit">Edit ✏️</button>
+          <button class="edit-btn btn" type="submit">Edit this Program✏️</button>
         </a>
         <form action="/programs/<%= program._id %>?_method=DELETE" method="POST">
-          <button class="delete-btn btn" ="submit">Delete 🗑️</button>
+          <button class="delete-btn btn" ="submit">Delete this Program 🗑️</button>
         </form>
       </div>
     <% } %>
