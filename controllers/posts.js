@@ -79,9 +79,23 @@ function createComment(req, res) {
   })
 }
 
-function deleteComment {
-  
+function updateComment(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    const comment = post.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      comment.set(req.body)
+      post.save()
+      .then(() => {
+        res.redirect(`/posts/${post._id}`)
+      })
+    }
+  })
 }
+
+// deleteComment(req, res) {
+
+// }
 
 export {
   index,
@@ -89,5 +103,6 @@ export {
   show,
   deletePost as delete,
   createComment,
-  deleteComment,
+  updateComment,
+  // deleteComment,
 }
