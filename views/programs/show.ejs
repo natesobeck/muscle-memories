@@ -10,7 +10,7 @@
       <div id="overview-container">
         <div class="overview-div"><%= program.split %></div>
         <div class="overview-div"><%= program.daysPerWeek %> day per week</div>
-        <div class="overview-div">Created by <%= program.addedBy.name %> at <%= program.createdAt.toLocaleDateString() %></div>
+        <div class="overview-div">Created by <%= program.addedBy.name %> on <%= program.createdAt.toLocaleDateString() %></div>
       </div>
     <div class="note-container">
         <p>A note from <%= program.addedBy.name %>:</p>
@@ -112,11 +112,11 @@
             <div class="review-pair">
               <textarea name="content" id="content-text"></textarea>
               <select name="rating" id="rating-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5" selected>5</option>
+                <option value="1">💪</option>
+                <option value="2">💪💪</option>
+                <option value="3">💪💪💪</option>
+                <option value="4">💪💪💪💪</option>
+                <option value="5" selected>💪💪💪💪💪</option>
               </select>
               <button class="add-exercise-btn btn" type="submit">+</button>
             </div>
@@ -132,8 +132,8 @@
       <% program.reviews.forEach(review => { %>
         <% total += review.rating %>
         <div class="review-card">
-          <h4>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleString()  %></h4>
-          <div class="rating-text"><em>Rating: <%= review.rating %></em></div>
+          <h4>Review added by <%= review.author.name %> on <%= review.createdAt.toLocaleString()%></h4>
+          <div class="rating-text">Rating: <%= review.rating %></div>
           <div class="review-content-container">
             <p><%= review.content %></p>
           </div>

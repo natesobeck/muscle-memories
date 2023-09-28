@@ -94,7 +94,7 @@ a {
 .page-header {
   border-right: 2px solid #9a031e;
   border-bottom: 2px solid #9a031e;
-  margin: 25px 0px 15px 0px;
+  margin: 10px 0px 15px 0px;
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 1.8rem;
@@ -172,6 +172,7 @@ a {
   border-right: 3px solid #9a031e;
   border-bottom: 3px solid #9a031e;
   margin-top: 5px;
+  margin-bottom: 20px;
   padding: 30px 20px;
   border-radius: 25px;
   background-color: whitesmoke;
