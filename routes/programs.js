@@ -5,7 +5,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 router.get('/', programsCtrl.index)
-router.get('/new', isLoggedIn, programsCtrl.new)
+router.get('/new', programsCtrl.new)
 router.get('/:programId', programsCtrl.show)
 router.get('/:programId/edit', isLoggedIn, programsCtrl.edit)
 router.post('/', programsCtrl.create)
