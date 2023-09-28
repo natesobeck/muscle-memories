@@ -143,3 +143,8 @@
   background-color: white;
   border: 1px solid gray;
 }
+
+h4 {
+  padding: 10px;
+  text-align: center;
+}
