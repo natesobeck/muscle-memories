@@ -18,7 +18,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   margin: 15px 0px 5px 0px;
+  max-width: 80vw;
 }
 
 .post-container a {
@@ -70,18 +72,23 @@
 .post-divider {
   width: 75%;
   border-bottom: 1px solid lightgray;
+  margin-bottom: 15px;
 }
 
 #add-post-container {
   width: 75%;
-  margin-bottom: 10px;
+}
+
+#add-post-container form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom : 20px;
+  align-items: center;
 }
 
 .edit-form {
   display: none;
+  align-items: center;
   width: 100%;
   align-items: center;
   justify-content: center;

@@ -103,6 +103,18 @@ a {
   text-align: center;
 }
 
+.page-subheader {
+  border-right: 2px solid #9a031e;
+  border-bottom: 2px solid #9a031e;
+  margin: 25px 0px 15px 0px;
+  padding: 5px 15px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  background-color: whitesmoke;
+  filter: drop-shadow(5px 5px 3px lightgray);
+  text-align: center;
+}
+
 #logout-btn {
   font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;

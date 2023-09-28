@@ -27,10 +27,9 @@
               <th>Sets</th>
               <th>Reps</th>
               <th>RPE</th>
-              <th>Tempo</th>
+              <th class="tempo">Tempo</th>
               <% if (program.addedBy._id.equals(user?.profile._id) && program.workouts.length) { %>
                 <th></th>
-
               <% } %>
             </tr>
             <% workout.exercises.forEach(exercise => { %>
@@ -39,7 +38,7 @@
                 <td><%= exercise.sets %></td>
                 <td><%= exercise.reps %></td>
                 <td><%= exercise.rpe %></td>
-                <td><%= exercise.tempo %></td>
+                <td class="tempo"><%= exercise.tempo %></td>
                 <% if (program.addedBy._id.equals(user?.profile._id)) { %>
                 <td>
                   <form
@@ -109,12 +108,9 @@
       <div id="new-review-container">
         <form action="/programs/<%= program._id %>/reviews" method="POST">
           <div id="review-sub-container">
+            <label for="content-text">Let <%= program.addedBy.name %> know what you think of the program! </label>
             <div class="review-pair">
-              <label for="content-text">Let <%= program.addedBy.name %> know what you think of the program! </label>
               <textarea name="content" id="content-text"></textarea>
-            </div>
-            <div class="review-pair">
-              <label for="rating-select"><strong><em>Rating: </em></strong></label>
               <select name="rating" id="rating-select">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -122,9 +118,9 @@
                 <option value="4">4</option>
                 <option value="5" selected>5</option>
               </select>
+              <button class="add-exercise-btn btn" type="submit">+</button>
             </div>
           </div>
-          <button class="add-exercise-btn btn" type="submit">+</button>
         </form>
       </div>
     <% } else { %>
@@ -149,7 +145,7 @@
               <button type="submit" class="edit-btn btn">✏️</button>
             </div>
             <form class="edit-form" method="POST" action="/programs/<%= program._id %>/reviews/<%= review._id %>?_method=PUT">
-              <input type="text" name="content">
+              <input type="text" name="content" value="<%= review.content %>">
             </form>
           <% } %>
         </div>

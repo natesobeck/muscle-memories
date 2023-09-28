@@ -27,7 +27,7 @@
                 <button type="submit" class="edit-btn btn">✏️</button>
               </div>
               <form class="edit-form" method="POST" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT">
-                <input type="text" name="content">
+                <input type="text" name="content" value="<%= comment.content %>">
               </form>
               <% } %>
           </div>

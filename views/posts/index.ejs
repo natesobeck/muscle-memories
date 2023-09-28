@@ -8,34 +8,36 @@
   <h1 class="page-header"><%= title %></h1>
   <div class="posts-container">
     <% if (user) { %>
-    <h2>Add a forum post: </h2>
+    <h2 class="page-subheader">Add a forum post: </h2>
     <div id="add-post-container">
       <form action="/posts" method="POST">
         <label for="post-create-input">Title of post: </label>
-        <input type="text" name="name" id="post-create-input">
-        <button class="add-btn btn" type="submit">+</button>
+        <div id="add-post-subcontainer">
+          <input type="text" name="name" id="post-create-input">
+          <button class="add-btn btn" type="submit">+</button>
+        </div>
       </form>
     </div>
     <% } else { %>
       <h4>Please sign in to add a post to the forum.</h4>
     <% } %>
     <% posts.forEach(post => { %>
-      <div class="post-divider"></div>
       <div class="post-container">
-        <% if (post.author._id.equals(user?.profile._id)) { %>
-          <div class="post-subcontainer">
-          <div><a href="/posts/<%= post._id %>"><%= post.name %></a> posted by <%= post.author.name %></div>
-            <div class="btn-container">
-              <button type="submit" class="edit-btn btn">✏️</button>
-              <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-                <button class="delete-post-btn btn" ="submit">🗑️</button>
+        <div class="post-subcontainer">
+          <div class="post-divider"></div>
+          <div><a href="/posts/<%= post._id %>"><%= post.name %></a> posted by <%= post.author.name %> on <%= post.createdAt.toLocaleDateString() %> at <%= post.createdAt.toLocaleTimeString() %></div>
+            <% if (post.author._id.equals(user?.profile._id)) { %>
+              <div class="btn-container">
+                <button type="submit" class="edit-btn btn">✏️</button>
+                <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+                  <button class="delete-post-btn btn" ="submit">🗑️</button>
+                </form>
+              </div>
+              <form class="edit-form" method="POST" action="/posts/<%= post._id %>?_method=PUT">
+                <input type="text" name="name" value="<%= post.name %>">
               </form>
-            </div>
-            <form class="edit-form" method="POST" action="/posts/<%= post._id %>?_method=PUT">
-              <input type="text" name="name">
-            </form>
+            <% } %>
           </div>
-        <% } %>
       </div>
     <% }) %>
   </div>

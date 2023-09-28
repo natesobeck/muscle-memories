@@ -27,7 +27,6 @@
   border-radius: 15px;
   padding: 15px 0px;
   background-color: rgb(221, 221, 221);
-  margin-bottom: 25px;
   filter: drop-shadow(5px 5px 3px lightgray);
 }
 
@@ -90,4 +89,36 @@ td {
 
 table {
   padding: 0px 10px;
+}
+
+.exercise-name {
+  font-weight: 600;
+  color: maroon;
+}
+
+@media (max-width: 450px) {
+  .note {
+    display: none;
+  }
+  .secondary-muscle {
+    display: none;
+  }
+  .main-muscle {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .note {
+    display: none;
+  }
+  .secondary-muscle {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .note {
+    display: none;
+  }
 }

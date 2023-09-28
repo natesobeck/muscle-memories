@@ -4,7 +4,7 @@
 
 <main>
   <div class="nav-buffer"></div>
-  <h1 class="page-header"><%= title %></h1>
+  <h1 class="page-header">Exercises</h1>
   <div id="exercise-page-body">
     <% if (user) { %>
       <form id="new-exercise-form" action="/exercises" method="POST">
@@ -36,26 +36,26 @@
     <% } else { %>
       <h3>Please sign in to add exercises to the site.</h1>
     <% } %>
-    <h2>All Exercises</h2>
+    <h2 class="page-subheader">All Exercises</h2>
     <div id="exercise-list">
       <table>
         <thead>
           <tr>
             <th>Name</th>
             <th>Equipment</th>
-            <th>Target Muscles</th>
-            <th>Secondary Muscles</th>
-            <th>Additional Note</th>
+            <th class="main-muscle">Target Muscles</th>
+            <th class="secondary-muscle">Secondary Muscles</th>
+            <th class="note">Additional Note</th>
           </tr>
         </thead>
         <tbody>
           <% exercises.forEach(exercise => { %>
             <tr>
-              <td><%= exercise.name %></td>
+              <td class="exercise-name"><%= exercise.name %></td>
               <td><%= exercise.equipment %></td>
-              <td><%= exercise.mainTargetedGroup %></td>
-              <td><%= exercise.secondaryTargetedGroup %></td>
-              <td><%= exercise.note %></td>
+              <td class="main-muscle"><%= exercise.mainTargetedGroup %></td>
+              <td class="secondary-muscle"><%= exercise.secondaryTargetedGroup %></td>
+              <td class="note"><%= exercise.note %></td>
             </tr>
           <% }) %>
         </tbody>
