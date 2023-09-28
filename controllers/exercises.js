@@ -20,6 +20,10 @@ function create(req, res) {
   .then(exercise => {
     res.redirect('/exercises/new')
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/exercises/new')
+  })
 }
 
 export {

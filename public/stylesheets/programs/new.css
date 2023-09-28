@@ -21,12 +21,13 @@ label {
 }
 
 textarea {
-  padding: 10px;
+  padding: 5px;
   background-color: whitesmoke;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid darkgray;
   width: 75%;
   margin: 5px 0px;
+  height: 30px;
   font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
 }
@@ -34,8 +35,8 @@ textarea {
 .submit-btn {
   background-color: white;
   color: #62ad65;
-  border: 3px solid #4CAF50;
-  padding: 10px 20px;
+  border: 1px solid #4CAF50;
+  padding: 0px 8px;
   border-radius: 10px;
   margin-top: 10px;
   font-size: 1em;
@@ -46,7 +47,7 @@ textarea {
   cursor: pointer;
   background-color: #4CAF50;
   color: white;
-  border: 3px solid gold;
+  border: 1px solid gold;
 }
 
 input, select {

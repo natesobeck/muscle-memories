@@ -7,7 +7,7 @@
   border-top: 2px solid #9a031e;
   border-right: 3px solid #9a031e;
   border-bottom: 3px solid #9a031e;
-  margin: 25px 0px 15px 0px;
+  margin: 0px 0px 15px 0px;
   padding: 30px 20px;
   border-radius: 25px;
   background-color: whitesmoke;
@@ -16,6 +16,7 @@
 
 .program-card {
   width: 100%;
+  max-width: 800px;
   font-size: 12px;
   text-align: center;
   text-justify: center;
@@ -30,7 +31,7 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: 20px;
-  filter: drop-shadow(5px 5px 3px gray);
+  filter: drop-shadow(5px 5px 3px lightgray);
 }
 
 .btn-container {
@@ -48,7 +49,6 @@ th {
   border-bottom: 1px solid lightgray;
   border-radius: 10px;
   font-weight: 400;
-  font-style: italic;
   padding: 5px 0px;
 }
 
@@ -73,53 +73,9 @@ td {
 
 .note-container div {
   width: 85%;
-  margin: 5px 0px;
+  margin: 10px 0px;
   padding: 10px 0px;
   background-color: whitesmoke;
   border-radius: 10px;
   border: 1px solid darkgray;
-}
-
-h4 {
-  margin-bottom: 30px;
-}
-
-.delete-btn {
-  color: #b00107;
-  background-color: whitesmoke;
-  border: 2px solid #b00107;
-}
-
-.delete-btn:hover {
-  cursor: pointer;
-  background-color: red;
-  color: white;
-  border: 2px solid gold;
-}
-
-.edit-btn {
-  color: #12657a;
-  background-color: whitesmoke;
-  border: 2px solid #12657a;
-  padding: 5px 8px;
-}
-
-.edit-btn:hover {
-  cursor: pointer;
-  background-color: blue;
-  color: white;
-  border: 2px solid gold;
-}
-
-.details-btn {
-  background-color: whitesmoke;
-  color: #613f75;
-  border: 2px solid #613f75;
-}
-
-.details-btn:hover {
-  cursor: pointer;
-  background-color: purple;
-  color: white;
-  border: 2px solid gold;
 }

@@ -29,39 +29,13 @@
   justify-content: center;
 }
 
-.delete-btn {
-  color: #b00107;
-  background-color: whitesmoke;
-  border: 2px solid #b00107;
-}
-
-.delete-btn:hover {
-  cursor: pointer;
-  background-color: red;
-  color: white;
-  border: 2px solid gold;
-}
-
-.edit-btn {
-  color: #12657a;
-  background-color: whitesmoke;
-  border: 2px solid #12657a;
-  padding: 2px 5px;
-}
-
-.edit-btn:hover {
-  cursor: pointer;
-  background-color: blue;
-  color: white;
-  border: 2px solid gold;
-}
-
 #overview-container {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 15px;
   width: 100%;
+  margin-bottom: -10px;
 }
 
 .overview-div {

@@ -20,24 +20,25 @@
 }
 
 #add-comment-container h4 {
-  margin: 15px 0px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 #add-comment-container form {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: -30px;
 }
 
 #add-comment-container textarea {
-  padding: 10px;
+  padding: 5px;
   background-color: whitesmoke;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid darkgray;
   width: 75%;
-  margin: 5px 0px;
-  font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  height: 28px;
+  margin: -25px 0px 20px 0px;
   filter: drop-shadow(5px 5px 3px lightgray);
 }
 
@@ -113,6 +114,7 @@
   color: #4CAF50;
   font-size: 20px;
   margin-left: 10px;
+  margin-bottom: 50px;
 }
 
 .add-btn:hover {
@@ -122,43 +124,22 @@
   color: white;
 }
 
-.delete-btn {
-  background-color: whitesmoke;
-  color: whitesmoke;
-  border: 2px solid #9a031e;
-}
-
-.delete-btn:hover {
-  cursor: pointer;
-  background-color: red;
-  color: white;
-  border: 2px solid gold;
-}
-
-.edit-btn {
-  background-color: whitesmoke;
-  border: 2px solid #12657a;
-  padding: 0px 5px;
-}
-
-.edit-btn:hover {
-  cursor: pointer;
-  background-color: blue;
-  color: white;
-  border: 2px solid gold;
+.delete-btn, .edit-btn {
+  padding: 2px 5px;
 }
 
 .edit-form {
   display: none;
   width: 100%;
+  justify-content: center;
 }
 
 .edit-form input {
-  width: 100%;
-  border-radius: 10px;
+  width: 80%;
+  border-radius: 5px;
   border: 1px solid gray;
-  padding: 15px;
+  padding: 3px;
   margin: 10px;
   background-color: white;
-  border: 1px solid #9a031e;
+  border: 1px solid gray;
 }

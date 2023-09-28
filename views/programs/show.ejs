@@ -13,9 +13,7 @@
         <div class="overview-div">Created by <%= program.addedBy.name %> at <%= program.createdAt.toLocaleDateString() %></div>
       </div>
     <div class="note-container">
-      <strong>
-        <em>A note from <%= program.addedBy.name %>:</em>
-      </strong>
+        <p>A note from <%= program.addedBy.name %>:</p>
       <div><%= program.note %></div>
     </div>
     <div class="show-program-divider"></div>
@@ -48,7 +46,7 @@
                       action="/programs/<%= program._id %>/workouts/<%= workout._id %>/exercises/<%= exercise._id %>?_method=DELETE"
                       method="POST"
                   >
-                    <button class="delete-exercise-btn" type="submit">🗑️</button>
+                    <button class="delete-btn btn" type="submit">🗑️</button>
                   </form>
                 </td>
                 <% } %>
