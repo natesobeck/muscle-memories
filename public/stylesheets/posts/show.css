@@ -34,14 +34,14 @@
 
 #add-comment-container textarea {
   padding: 5px;
-  background-color: #284B63;
+  background-color: #153243;
   border-radius: 5px;
   border-right: 2px solid gold;
   border-bottom: 2px solid gold;
   width: 75%;
   height: 28px;
   margin: 30px 0px 20px 0px;
-  filter: drop-shadow(5px 5px 3px #B4B8AB);
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
   color: white;
 }
 
@@ -63,7 +63,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  filter: drop-shadow(5px 5px 3px #B4B8AB);
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
 }
 
 .comment-info {
@@ -88,13 +88,14 @@
   padding: 15px;
   margin: 10px;
   background-color: #153243;
-  filter: drop-shadow(5px 5px 2px #B4B8AB);
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
   margin-top: 20px;
 }
 
 .comment-and-btn {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items:center;
 }
 

@@ -95,7 +95,7 @@ a {
   margin: 10px 0px 15px 0px;
   padding: 10px 20px;
   border-radius: 25px;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   background-color: #153243;
   filter: drop-shadow(5px 5px 5px #B4B8AB);
   color: white;
@@ -110,7 +110,7 @@ a {
   border-radius: 25px;
   font-size: 1.2rem;
   background-color: #153243;
-  filter: drop-shadow(5px 5px 3px #B4B8AB);
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
   text-align: center;
 }
 
@@ -244,9 +244,9 @@ footer img {
   position: absolute;
   right: 10px;
   border-radius: 15px;
-  width: 200px;
-  height: 40px;
-  bottom: 8px;
+  width: 160px;
+  height: 32px;
+  bottom: 12px;
 }
 
 .footer-buffer {
@@ -273,6 +273,13 @@ footer img {
     top: 24%;
     border-radius: 10px;
   }
+  footer img {
+    right: 10px;
+    border-radius: 15px;
+    width: 180px;
+    height: 36px;
+    bottom: 10px;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -293,6 +300,13 @@ footer img {
     height: 40px;
     top: 17%;
     border-radius: 10px;
+  }
+  footer img {
+    right: 10px;
+    border-radius: 15px;
+    width: 200px;
+    height: 40px;
+    bottom: 8px;
   }
   .nav-divider {
     margin: 0px 15px;

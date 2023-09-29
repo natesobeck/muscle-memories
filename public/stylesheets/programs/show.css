@@ -76,7 +76,7 @@
   width: 80%;
   display: flex;
   justify-content: center;
-  filter: drop-shadow(5px 5px 2px #B4B8AB);
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
 }
 
 .workout-card table{
@@ -115,7 +115,7 @@
   display: flex;
   flex-direction: column;
   padding: 5px;
-  width: 100%;
+  width: 90%;
   max-width: 150px;
 }
 
@@ -125,7 +125,7 @@
 
 .add-exercise-to-workout form div input, .add-exercise-to-workout form div select {
   margin-top: 5px;
-  max-width: 150px;
+  max-width: 125px;
 }
 
 input, select {
@@ -174,6 +174,7 @@ input, select {
 
 #new-review-container {
   width: 75%;
+  margin-bottom: 10px;
 }
 
 #new-review-container form #review-subcontainer{
@@ -192,11 +193,15 @@ input, select {
   font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   width: 80%;
-  border: 1px solid gold;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
+  background-color: #153243;
   border-radius: 10px;
   margin-top: 10px;
   margin-right: 10px;
   padding: 5px;
+  color: white;
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
 }
 
 #new-review-container form select {
@@ -217,11 +222,12 @@ input, select {
   justify-content: center;
   align-items: center;
   padding: 10px 0px;
-  border: 1px solid gray;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   border-radius: 10px;
   background-color: #284B63;
   width: 80%;
-  filter: drop-shadow(5px 2px 3px #284B63);
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
   margin: 10px 0px;
 }
 
@@ -275,16 +281,46 @@ input, select {
   .tempo {
     display: none;
   }
+  .note-container, .overview-div, .workout-card, .add-exercise-to-workout form, h4, #new-review-container, #add-workout-form-container {
+    font-size: 1em
+  }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 700px) {
+  .note-container, .overview-div, .workout-card, .add-exercise-to-workout form, h4, #new-review-container, #add-workout-form-container  {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 925px) {
   .add-exercise-to-workout form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    position: relative;
   }
   .add-exercise-to-workout form input, .add-exercise-to-workout form select {
     width: 11vw;
+  }
+  .add-exercise-btn {
+    position: absolute;
+    bottom: 5px;
+    right: -3vw;
+  }
+  .note-container, .overview-div, .workout-card, .add-exercise-to-workout form, h4, #new-review-container, #add-workout-form-container {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 1150px){
+  .add-exercise-btn {
+    right: -2.5vw;
+  }
+}
+
+@media (min-width: 1450px) {
+  .add-exercise-btn {
+    right: -2vw;
   }
 }
