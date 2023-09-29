@@ -24,13 +24,13 @@
                 <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                   <button type="submit" class="btn">🗑️</button>
                 </form>
-                <button type="submit" class="btn">✏️</button>
+                <button type="submit" class="edit-btn btn btn-buffer">✏️</button>
               </div>
-              <form class="edit-form" method="POST" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT">
-                <input type="text" name="content" value="<%= comment.content %>">
-              </form>
-              <% } %>
-          </div>
+            </div>
+            <form class="edit-form" method="POST" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT">
+              <input type="text" name="content" value="<%= comment.content %>">
+            </form>
+            <% } %>
           <% }) %>
       <% } else { %>
         <h4>There aren't any comments on this thread yet.</h4>
@@ -42,7 +42,7 @@
         <div class="add-comment-subcontainer">
           <form method="POST" action="/posts/<%= post._id %>/comments">
               <textarea name="content"></textarea>
-              <button class="btn" type="submit">+</button>
+              <button class="btn add-btn" type="submit">+</button>
           </form>
         </div>
       </div>

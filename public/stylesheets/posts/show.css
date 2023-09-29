@@ -16,11 +16,13 @@
 #add-comment-container {
   width: 75%;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 #add-comment-container h4 {
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 10px;
+  margin-bottom: -20px;
 }
 
 #add-comment-container form {
@@ -38,8 +40,9 @@
   border-bottom: 2px solid gold;
   width: 75%;
   height: 28px;
-  margin: -25px 0px 20px 0px;
-  filter: drop-shadow(5px 5px 2px #B4B8AB);
+  margin: 30px 0px 20px 0px;
+  filter: drop-shadow(5px 5px 3px #B4B8AB);
+  color: white;
 }
 
 #add-comment-subcontainer {
@@ -51,7 +54,8 @@
 
 #all-comments-container {
   width: 90%;
-  border: 2px solid gold;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   border-radius: 10px;
   padding: 15px;
   margin-top: 15px;
@@ -59,6 +63,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: drop-shadow(5px 5px 3px #B4B8AB);
 }
 
 .comment-info {
@@ -95,6 +100,7 @@
 
 .btn-container {
   display: flex;
+  flex-direction: column;
 }
 
 .author-name {
@@ -104,12 +110,16 @@
 .btn {
   background-color: #284B63;
   padding: 0px 5px;
-  border: 2px solid gold;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   color: gold;
   font-size: 20px;
   margin-left: 10px;
   border-radius: 10px;
-  margin-top: 10px;
+}
+
+.add-btn {
+  border: 2px solid gold;
 }
 
 .btn:hover {
@@ -128,14 +138,22 @@
 .edit-form input {
   width: 80%;
   border-radius: 5px;
-  border: 1px solid gray;
+  border-right: 2px solid gold;
+  color: white;
+  background-color: #153243;
   padding: 3px;
   margin: 10px;
-  background-color: white;
-  border: 1px solid gray;
 }
 
 h4 {
   padding: 10px;
   text-align: center;
+}
+
+.btn-buffer {
+  margin-bottom: -30px;
+}
+
+.edit-btn {
+  margin-top: 5px;
 }

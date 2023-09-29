@@ -78,3 +78,7 @@ td {
   border-bottom: 1px solid gold;
   border-right: 1px solid gold;
 }
+
+#post-title {
+  color: gold;
+}

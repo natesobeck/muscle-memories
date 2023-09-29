@@ -27,14 +27,15 @@
 }
 
 .post-container a:hover {
-  font-size: 1.3em;
-  border-bottom: 2px solid gold;
+  font-size: 1.2em;
+  border-bottom: 2px solid #B4B8AB;
 }
 
 .btn {
   background-color: #284B63;
   padding: 2px 5px;
-  border: 2px solid gold;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   color: gold;
   font-size: 20px;
   margin-left: 10px;
@@ -66,6 +67,14 @@
   align-items: center;
 }
 
+#add-post-container input {
+  background-color: #284B63;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
+  border-radius: 5px;
+  color: white;
+} 
+
 .edit-form {
   display: none;
   align-items: center;
@@ -76,12 +85,14 @@
 
 .edit-form input {
   width: 100%;
+  background-color: #284B63;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   border-radius: 5px;
-  border: 1px solid gray;
   padding: 3px;
   margin-bottom: 10px;
   margin-top: 5px;
-  background-color: white;
+  color: white;
 }
 
 .btn-container {
@@ -106,3 +117,7 @@ h4 {
   padding: 10px;
   text-align: center;
 }
+
+.gold-text {
+  color: gold;
+  text-align: center;

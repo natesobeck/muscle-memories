@@ -11,12 +11,13 @@
     <h2 class="page-subheader">Add a forum post: </h2>
     <div id="add-post-container">
       <form action="/posts" method="POST">
-        <label for="post-create-input">Title of post: </label>
+        <label class="gold-text" for="post-create-input">Title of post: </label>
         <div id="add-post-subcontainer">
           <input type="text" name="name" id="post-create-input">
           <button class="add-btn btn" type="submit">+</button>
         </div>
       </form>
+      <p class="gold-text">Just click on your post below to enter a thread and get into the discussion.</p>
     </div>
     <% } else { %>
       <h4>Please sign in to add a post to the forum.</h4>
@@ -28,10 +29,10 @@
           <div><a href="/posts/<%= post._id %>"><%= post.name %></a> posted by <%= post.author.name %> on <%= post.createdAt.toLocaleDateString() %> at <%= post.createdAt.toLocaleTimeString() %></div>
             <% if (post.author._id.equals(user?.profile._id)) { %>
               <div class="btn-container">
-                <button type="submit" class="btn">✏️</button>
                 <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
                   <button class="btn" ="submit">🗑️</button>
                 </form>
+                <button type="submit" class="edit-btn btn">✏️</button>
               </div>
               <form class="edit-form" method="POST" action="/posts/<%= post._id %>?_method=PUT">
                 <input type="text" name="name" value="<%= post.name %>">
