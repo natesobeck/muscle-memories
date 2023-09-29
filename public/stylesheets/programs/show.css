@@ -137,7 +137,7 @@ input, select {
   color: white;
 }
 
-.add-exercise-btn {
+.add-exercise-btn, .add-review-btn, .add-workout-btn {
   background-color: #284B63;
   padding: 0px 5px;;
   border: 2px solid gold;
@@ -146,7 +146,7 @@ input, select {
   margin-left: 10px;
 }
 
-.add-exercise-btn:hover {
+.add-exercise-btn:hover, .add-review-btn:hover, .add-workout-btn:hover {
   cursor: pointer;
   background-color: gold;
   border: 2px solid #153243;
