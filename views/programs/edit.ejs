@@ -10,7 +10,6 @@
       <form method="POST" action="/programs/<%= program._id %>?_method=PUT">
         <label for="program-name-input">Program Name:</label>
         <input type="text" name="name" id="program-name-input" value="<%= program.name %>">
-        <div class="edit-program-divider"></div>
         <label for="days-per-week-select">Days Per Week:</label>
         <select name="daysPerWeek" id="days-per-week-select">
           <option value="<%= program.daysPerWeek %>"><%= program.daysPerWeek %></option>
@@ -22,7 +21,6 @@
           <option value="6">6</option>
           <option value="7">7</option>
         </select>
-        <div class="edit-program-divider"></div>
         <label for="split-select">Split:</label>
         <select name="split" id="split-select" value="<%= program.split %>">
           <option><%= program.split %></option>
@@ -31,7 +29,6 @@
           <option value="Full Body">Full Body</option>
           <option value="Other">Other</option>
         </select>
-        <div class="edit-program-divider"></div>
         <label for="program-note-textarea">Additional Notes:</label>
         <textarea type="text" name="note" id="program-note-tezxtarea" value="<%= program.note %>"><%= program.note %></textarea>
         <button class="submit-btn" type="submit">Save</button>
@@ -40,6 +37,7 @@
   <% } else { %>
     <h3>You are not logged in as the user who created the program, so it can't be edited. If this is you, please sign in!</h3>
   <% } %>
+  <div class="footer-buffer"></div>
 </main>
 
 <%- include('../partials/footer') %>

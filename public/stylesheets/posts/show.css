@@ -4,14 +4,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-right: 3px solid #9a031e;
-  border-bottom: 3px solid #9a031e;
-  border-top: 1px solid #9a031e;
-  border-left: 1px solid #9a031e;
+  border-right: 3px solid gold;
+  border-bottom: 3px solid gold;
   border-radius: 15px;
   padding: 15px 0px;
-  background-color: rgb(236, 236, 236);
-  filter: drop-shadow(5px 5px 3px gray);
+  background-color: #153243;
+  color: white;
+  filter: drop-shadow(5px 5px 5px #B4B8AB);
 }
 
 #add-comment-container {
@@ -33,13 +32,14 @@
 
 #add-comment-container textarea {
   padding: 5px;
-  background-color: whitesmoke;
+  background-color: #284B63;
   border-radius: 5px;
-  border: 1px solid darkgray;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   width: 75%;
   height: 28px;
   margin: -25px 0px 20px 0px;
-  filter: drop-shadow(5px 5px 3px lightgray);
+  filter: drop-shadow(5px 5px 2px #B4B8AB);
 }
 
 #add-comment-subcontainer {
@@ -51,19 +51,19 @@
 
 #all-comments-container {
   width: 90%;
-  border: 2px solid gray;
+  border: 2px solid gold;
   border-radius: 10px;
   padding: 15px;
   margin-top: 15px;
-  background: whitesmoke;
+  background-color: #284B63;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .comment-info {
-  border-right: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
+  border-right: 1px solid gold;
+  border-bottom: 1px solid gold;
   border-radius: 10px;
   padding: 3px;
 }
@@ -79,17 +79,17 @@
   display: flex;
   width: 100%;
   border-radius: 10px;
-  border: 1px solid gray;
+  border-right: 1px solid gold;
   padding: 15px;
   margin: 10px;
-  background-color: white;
-  filter: drop-shadow(5px 5px 3px lightgray);
+  background-color: #153243;
+  filter: drop-shadow(5px 5px 2px #B4B8AB);
+  margin-top: 20px;
 }
 
 .comment-and-btn {
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items:center;
 }
 
@@ -98,34 +98,25 @@
 }
 
 .author-name {
-  color: #9a031e;
+  color: gold;
 }
 
 .btn {
+  background-color: #284B63;
   padding: 0px 5px;
-  border-radius: 10px;
-  margin: 5px 20px;
-}
-
-.add-btn {
-  background-color: white;
-  padding: 0px 5px;;
-  border: 2px solid #4CAF50;
-  color: #4CAF50;
+  border: 2px solid gold;
+  color: gold;
   font-size: 20px;
   margin-left: 10px;
-  margin-bottom: 50px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
-.add-btn:hover {
+.btn:hover {
   cursor: pointer;
-  background-color: #4CAF50;
-  border: 2px solid gold;
-  color: white;
-}
-
-.delete-btn, .edit-btn {
-  padding: 2px 5px;
+  background-color: gold;
+  border: 2px solid #153243;
+  color: #284B63;
 }
 
 .edit-form {

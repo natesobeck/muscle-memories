@@ -3,11 +3,9 @@
   font-size: 12px;
   text-align: center;
   text-justify: center;
-  border-right: 3px solid #9a031e;
-  border-bottom: 3px solid #9a031e;
-  border-top: 1px solid #9a031e;
-  border-left: 1px solid #9a031e;
-  background-color: rgb(236, 236, 236);
+  border-right: 3px solid gold;
+  border-bottom: 3px solid gold;
+  background-color: #153243;
   padding: 10px;
   border-radius: 15px;
   display: flex;
@@ -15,7 +13,8 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 20px;
-  filter: drop-shadow(5px 5px 3px gray);
+  filter: drop-shadow(5px 5px 5px #B4B8AB);
+  color: white;
 }
 
 .btn {
@@ -40,10 +39,10 @@
 }
 
 .overview-div {
-  border-bottom: 1px solid #9a031e;
-  border-right: 1px solid #9a031e;
+  border-bottom: 1px solid gold;
+  border-right: 1px solid gold;
   border-radius: 10px;
-  background-color: whitesmoke;
+  background-color: #284B63;
   width: 20%;
   margin: 0px 5px;
   height: 100%;
@@ -61,21 +60,23 @@
 .note-container div, .workout-card {
   margin: 5px 0px;
   padding: 10px;
-  background-color: whitesmoke;
+  background-color: #284B63;
   border-radius: 10px;
 }
 
 .note-container div {
-  border: 1px solid darkgray;
+  border-right: 1px solid #B4B8AB;
+  border-bottom: 1px solid #B4B8AB;
 }
 
 .workout-card {
-  border: 1px solid #9a031e;
-  background-color: whitesmoke;
+  border-right: 1px solid gold;
+  border-bottom: 1px solid gold;
+  background-color: #284B63;
   width: 80%;
   display: flex;
   justify-content: center;
-  filter: drop-shadow(5px 5px 3px lightgray);
+  filter: drop-shadow(5px 5px 2px #B4B8AB);
 }
 
 .workout-card table{
@@ -86,29 +87,21 @@
 }
 
 .workout-card table tr td {
-  border-bottom: 1px dashed #ffd500;
+  border-bottom: 1px dashed gold;
   padding: 5px 0px;
 }
 
 .workout-card table th {
-  border-bottom: 1px solid darkgray;
-}
-
-.show-program-divider {
-  border-top: 1px dotted #9a031e;
-  width: 75%;
-  margin-top: 15px;
+  border-bottom: 1px solid #B4B8AB;
 }
 
 .add-exercise-to-workout {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 10px;
   border-radius: 10px;
-  background-color: whitesmoke;
+  background-color: #153243;
   width: 80%;
-  filter: drop-shadow(5px 5px 3px lightgray);
 }
 
 .add-exercise-to-workout form{
@@ -138,23 +131,25 @@
 input, select {
   padding: 3px;
   border-radius: 5px;
-  border: 1px solid lightgray;
+  border: 2px solid gold;
+  background-color: #284B63;
+  color: white;
 }
 
 .add-exercise-btn {
-  background-color: white;
+  background-color: #284B63;
   padding: 0px 5px;;
-  border: 2px solid #4CAF50;
-  color: #4CAF50;
+  border: 2px solid gold;
+  color: gold;
   font-size: 20px;
   margin-left: 10px;
 }
 
 .add-exercise-btn:hover {
   cursor: pointer;
-  background-color: #4CAF50;
-  border: 2px solid gold;
-  color: white;
+  background-color: gold;
+  border: 2px solid #153243;
+  color: #284B63;
 }
 
 #add-workout-form-container, #new-review-container form{
@@ -174,12 +169,6 @@ input, select {
 
 #add-workout-form-item-container {
   display: flex;
-}
-
-h2 {
-  text-decoration: underline;
-  text-decoration-color: #9a031e;
-  text-underline-offset: 3px;
 }
 
 #new-review-container {
@@ -202,7 +191,7 @@ h2 {
   font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   width: 80%;
-  border: 1px solid lightgray;
+  border: 1px solid gold;
   border-radius: 10px;
   margin-top: 10px;
   margin-right: 10px;
@@ -229,15 +218,15 @@ h2 {
   padding: 10px 0px;
   border: 1px solid gray;
   border-radius: 10px;
-  background-color: whitesmoke;
+  background-color: #284B63;
   width: 80%;
-  filter: drop-shadow(5px 5px 3px lightgray);
+  filter: drop-shadow(5px 2px 3px #284B63);
   margin: 10px 0px;
 }
 
 .review-card h4 {
   text-decoration: underline;
-  text-decoration-color: lightgray;
+  text-decoration-color: #284B63;
   margin-bottom: 10px;
   font-weight: 400;
 }
@@ -252,11 +241,12 @@ h2 {
 }
 
 .review-content-container {
-  border: 1px solid lightgray;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   padding: 0px 15px;
   border-radius: 10px;
   margin-bottom : 10px;
-  background-color: white;
+  background-color: #153243;
   font-size: 14px;
   width: 90%;
   text-align: left;

@@ -16,7 +16,6 @@
         <p>A note from <%= program.addedBy.name %>:</p>
       <div><%= program.note %></div>
     </div>
-    <div class="show-program-divider"></div>
     <% program.workouts.forEach(workout => { %>
       <h3><%= workout.name %>:</h3>
       <% if (workout.exercises.length) { %>
@@ -88,7 +87,6 @@
           </form>
         </div>
       <% } %>
-      <div class="show-program-divider"></div>
       <% }) %>
     <% if (program.addedBy._id.equals(user?.profile._id)) { %>
       <h3>Add a workout to the program:</h3>
@@ -102,8 +100,7 @@
         </form>
       </div>
     <% } %>
-    <div class="show-program-divider"></div>
-    <h2>Reviews:</h2>
+    <h2 class="page-subheader">Reviews:</h2>
     <% if (user) { %>
       <div id="new-review-container">
         <form action="/programs/<%= program._id %>/reviews" method="POST">
@@ -127,7 +124,6 @@
       <h4>Please sign in to add a review.</h4>
     <% } %>
     <% if (program.reviews.length) { %>
-      <div class="show-program-divider"></div>
       <% let total = 0 %>
       <% program.reviews.forEach(review => { %>
         <% total += review.rating %>
@@ -137,7 +133,7 @@
           <div class="review-content-container">
             <p><%= review.content %></p>
           </div>
-          <% if (program.addedBy._id.equals(user?.profile._id)) { %>
+          <% if (review.author._id.equals(user?.profile._id)) { %>
             <div class="btn-container">
               <form action="/programs/<%= program._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
                 <button class="delete-btn btn" type="submit">🗑️</button>
@@ -165,6 +161,7 @@
       </div>
     <% } %>
   </div>
+  <div class="footer-buffer"></div>
 </main>
 
 <%- include('../partials/footer') %>

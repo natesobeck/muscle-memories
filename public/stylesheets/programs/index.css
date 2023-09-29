@@ -3,15 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 2px solid #9a031e;
-  border-top: 2px solid #9a031e;
-  border-right: 3px solid #9a031e;
-  border-bottom: 3px solid #9a031e;
+  border-right: 3px solid gold;
+  border-bottom: 3px solid gold;
   margin-bottom: 20px;
   padding: 30px 20px;
   border-radius: 25px;
-  background-color: whitesmoke;
-  filter: drop-shadow(5px 5px 3px gray);
+  background-color: #153243;
+  filter: drop-shadow(5px 5px 5px #B4B8AB);
 }
 
 .program-card {
@@ -20,18 +18,17 @@
   font-size: 12px;
   text-align: center;
   text-justify: center;
-  border-right: 3px solid #9a031e;
-  border-bottom: 3px solid #9a031e;
-  border-top: 1px solid #9a031e;
-  border-left: 1px solid #9a031e;
-  background-color: rgb(236, 236, 236);
+  border-right: 3px solid gold;
+  border-bottom: 3px solid gold;
+  background-color: #284B63;
   padding: 10px;
   border-radius: 15px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 20px;
-  filter: drop-shadow(5px 5px 3px lightgray);
+  filter: drop-shadow(5px 5px 2px #B4B8AB);
+  color: white;
 }
 
 .btn-container {
@@ -54,7 +51,7 @@ th {
 
 td {
   font-size: 1.2em;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #B4B8AB;
   border-radius: 10px;
   padding: 5px 0px;
 }
@@ -62,7 +59,7 @@ td {
 .program-name {
   font-weight: 600;
   border-radius: 10px;
-  color: #9a031e;
+  color: gold;
 }
 
 .note-container {
@@ -76,7 +73,8 @@ td {
   width: 85%;
   margin: 10px 0px;
   padding: 10px 0px;
-  background-color: whitesmoke;
+  background-color: #153243;
   border-radius: 10px;
-  border: 1px solid darkgray;
+  border-bottom: 1px solid gold;
+  border-right: 1px solid gold;
 }

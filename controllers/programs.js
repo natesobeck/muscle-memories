@@ -26,7 +26,7 @@ function create(req, res) {
   req.body.addedBy = req.user.profile._id
   Program.create(req.body)
   .then(program => {
-    res.redirect(`/programs/:programId`)
+    res.redirect(`/programs/${program._id}`)
   })
   .catch(err => {
     console.log(err)

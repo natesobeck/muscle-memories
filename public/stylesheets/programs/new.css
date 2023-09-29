@@ -3,16 +3,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-right: 3px solid #9a031e;
-  border-bottom: 3px solid #9a031e;
-  border-top: 1px solid #9a031e;
-  border-left: 1px solid #9a031e;
+  border-right: 3px solid gold;
+  border-bottom: 3px solid gold;
   border-radius: 15px;
   padding: 15px 0px;
-  background-color: rgb(236, 236, 236);
+  background-color: #153243;
   text-align: center;
   margin-bottom: 25px;
-  filter: drop-shadow(5px 5px 3px gray);
+  filter: drop-shadow(5px 5px 5px #B4B8AB);
+  color: white;
 }
 
 label {
@@ -22,49 +21,47 @@ label {
 
 textarea {
   padding: 5px;
-  background-color: whitesmoke;
+  background-color: #284B63;
   border-radius: 5px;
-  border: 1px solid darkgray;
+  border-right: 1px solid gold;
+  border-bottom: 1px solid gold;
   width: 75%;
   margin: 5px 0px;
   height: 30px;
-  font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  color: white;
 }
 
 .submit-btn {
-  background-color: white;
-  color: #62ad65;
-  border: 1px solid #4CAF50;
-  padding: 0px 8px;
-  border-radius: 10px;
+  background-color: #284B63;
+  padding: 0px 5px;
+  border: 2px solid gold;
+  color: gold;
+  font-size: 20px;
+  margin-left: 10px;
+  border-radius: 5px;
   margin-top: 10px;
-  font-size: 1em;
-  font-size: 22px;
 }
 
 .submit-btn:hover {
   cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: 1px solid gold;
+  background-color: gold;
+  border: 2px solid #153243;
+  color: #284B63;
 }
 
 input, select {
   width: 20%;
   padding: 5px;
-  border: 1px solid darkgray;
+  border-right: 1px solid gold;
+  border-bottom: 1px solid gold;
+  background-color: #284B63;
   border-radius: 5px;
   text-align: center;
+  color: white;
+
 }
 
 select {
   font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
-}
-
-.new-program-divider {
-  border-top: 1px dotted #9a031e;
-  width: 75%;
-  margin-top: 15px;
 }

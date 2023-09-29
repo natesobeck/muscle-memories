@@ -28,9 +28,9 @@
           <div><a href="/posts/<%= post._id %>"><%= post.name %></a> posted by <%= post.author.name %> on <%= post.createdAt.toLocaleDateString() %> at <%= post.createdAt.toLocaleTimeString() %></div>
             <% if (post.author._id.equals(user?.profile._id)) { %>
               <div class="btn-container">
-                <button type="submit" class="edit-btn btn">✏️</button>
+                <button type="submit" class="btn">✏️</button>
                 <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-                  <button class="delete-post-btn btn" ="submit">🗑️</button>
+                  <button class="btn" ="submit">🗑️</button>
                 </form>
               </div>
               <form class="edit-form" method="POST" action="/posts/<%= post._id %>?_method=PUT">
@@ -41,6 +41,7 @@
       </div>
     <% }) %>
   </div>
+  <div class="footer-buffer"></div>
 </main>
 
 <%- include('../partials/footer') %>

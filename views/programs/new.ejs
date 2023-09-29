@@ -9,7 +9,6 @@
       <form method="POST" action="/programs">
         <label for="program-name-input">What do you want to name your program?</label>
         <input type="text" name="name" id="program-name-input">
-        <div class="new-program-divider"></div>
         <label for="days-per-week-select">How many workouts per week?</label>
         <select name="daysPerWeek" id="days-per-week-select">
           <option value="1">1</option>
@@ -20,7 +19,6 @@
           <option value="6">6</option>
           <option value="7">7</option>
         </select>
-        <div class="new-program-divider"></div>
         <label for="split-select">How are you splitting your training based on muscle group?</label>
         <select name="split" id="split-select">
           <option value="Push/Pull/Legs">Push/Pull/Legs</option>
@@ -28,7 +26,6 @@
           <option value="Full Body">Full Body</option>
           <option value="Other">Other</option>
         </select>
-        <div class="new-program-divider"></div>
         <label for="program-note-textarea">Finally, let's leave a note containing any additional information you think would be pertinent to your program.</label>
         <textarea name="note" id="program-note-textarea" placeholder="Your note."></textarea>
         <button class="submit-btn" type="submit">+</button>
@@ -37,6 +34,7 @@
   <% } else { %>
     <h3>Please sign in to add a program.</h3>
   <% } %>
+  <div class="footer-buffer"></div>
 </main>
 
 <%- include('../partials/footer') %>

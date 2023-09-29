@@ -4,14 +4,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-right: 3px solid #9a031e;
-  border-bottom: 3px solid #9a031e;
-  border-top: 1px solid #9a031e;
-  border-left: 1px solid #9a031e;
+  border-right: 3px solid gold;
+  border-bottom: 3px solid gold;
+  color: white;
   border-radius: 15px;
   padding: 15px 0px;
-  background-color: rgb(236, 236, 236);
-  filter: drop-shadow(5px 5px 3px gray);
+  background-color: #153243;
+  filter: drop-shadow(5px 5px 5px #B4B8AB);
 }
 
 .post-container {
@@ -24,7 +23,7 @@
 }
 
 .post-container a {
-  color: #9a031e;
+  color: gold;
 }
 
 .post-container a:hover {
@@ -33,46 +32,27 @@
 }
 
 .btn {
-  padding: 5px 10px;
-  margin: 5px 10px;
-  border-radius: 10px;
-}
-
-.add-btn {
-  background-color: white;
-  padding: 0px 5px;;
-  border: 1px solid #4CAF50;
-  color: #4CAF50;
+  background-color: #284B63;
+  padding: 2px 5px;
+  border: 2px solid gold;
+  color: gold;
   font-size: 20px;
   margin-left: 10px;
-  margin-bottom: -5px;
-}
-
-.add-btn:hover {
-  cursor: pointer;
-  background-color: #4CAF50;
-  border: 1px solid gold;
-  color: white;
-}
-
-.delete-post-btn {
-  background-color: whitesmoke;
-  border: 1px solid #b00107;
-  padding: 3px 5px;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
-.delete-post-btn:hover {
+.btn:hover {
   cursor: pointer;
-  background-color: red;
-  color: white;
-  border: 1px solid gold;
+  background-color: gold;
+  border: 2px solid #153243;
+  color: #284B63;
 }
 
 .post-divider {
-  width: 75%;
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 15px;
+  width: 60%;
+  border-bottom: 3px solid #B4B8AB;
+  margin-bottom: 20px;
 }
 
 #add-post-container {
@@ -113,10 +93,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.edit-btn {
-  padding: 2px 5px;
 }
 
 #post-create-input {

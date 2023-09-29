@@ -22,9 +22,9 @@
             <% if (post.author._id.equals(user?.profile._id)) { %>
               <div class="btn-container">
                 <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                  <button type="submit" class="delete-btn btn">🗑️</button>
+                  <button type="submit" class="btn">🗑️</button>
                 </form>
-                <button type="submit" class="edit-btn btn">✏️</button>
+                <button type="submit" class="btn">✏️</button>
               </div>
               <form class="edit-form" method="POST" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT">
                 <input type="text" name="content" value="<%= comment.content %>">
@@ -42,7 +42,7 @@
         <div class="add-comment-subcontainer">
           <form method="POST" action="/posts/<%= post._id %>/comments">
               <textarea name="content"></textarea>
-              <button class="add-btn btn" type="submit">+</button>
+              <button class="btn" type="submit">+</button>
           </form>
         </div>
       </div>
@@ -50,6 +50,7 @@
       <h4>Please sign in to add a comment to this thread.</h4>
     <% } %>
   </div>
+  <div class="footer-buffer"></div>
 </main>
 
 <%- include('../partials/footer') %>

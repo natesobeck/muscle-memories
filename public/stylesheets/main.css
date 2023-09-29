@@ -22,8 +22,7 @@ main {
 
 body {
   width: 90vw;
-  background-color: lightgray;
-  color: #343a40;
+  background-color: #284B63;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
@@ -31,7 +30,7 @@ body {
 }
 
 nav {
-  background-color: #9a031e;
+  background-color: #153243;
   color: white;
   display: flex;
   align-items: center;
@@ -64,7 +63,7 @@ nav img {
 
 nav .nav-item:hover {
   padding-bottom: 5px;
-  border-bottom: 3px solid gold;
+  border-bottom: 3px solid #B4B8AB;
   font-size: .7rem;
   cursor: pointer;
 }
@@ -82,36 +81,36 @@ nav .nav-item:hover {
 
 a {
   text-decoration: none;
-  color: #9a031e;
+  color: gold;
   font-weight: bold;
 }
 
 .nav-buffer {
   padding-top: 70px;
-  text-align: center;
 }
 
 .page-header {
-  border-right: 2px solid #9a031e;
-  border-bottom: 2px solid #9a031e;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   margin: 10px 0px 15px 0px;
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 1.8rem;
-  background-color: whitesmoke;
-  filter: drop-shadow(5px 5px 3px gray);
+  background-color: #153243;
+  filter: drop-shadow(5px 5px 5px #B4B8AB);
+  color: white;
   text-align: center;
 }
 
 .page-subheader {
-  border-right: 2px solid #9a031e;
-  border-bottom: 2px solid #9a031e;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   margin: 25px 0px 15px 0px;
   padding: 5px 15px;
   border-radius: 25px;
   font-size: 1.2rem;
-  background-color: whitesmoke;
-  filter: drop-shadow(5px 5px 3px lightgray);
+  background-color: #153243;
+  filter: drop-shadow(5px 5px 3px #B4B8AB);
   text-align: center;
 }
 
@@ -134,8 +133,8 @@ a {
 }
 
 .step-a:hover {
-  border-bottom: 2px solid gold;
-  font-size: 1.3em;
+  border-bottom: 3px solid #B4B8AB;
+  font-size: 1.2em;
 }
 
 #step-container {
@@ -148,7 +147,6 @@ a {
   border-top: 2px dashed gold;
   border-radius: 25px;
   padding: 20px;
-  filter: drop-shadow(5px 5px 5px rgb(188, 188, 188));
 }
 
 #step-container div {
@@ -159,7 +157,7 @@ a {
 
 #step-container div em {
   text-decoration: underline;
-  text-decoration-color: #9a031e;
+  text-decoration-color: gold;
   text-decoration-thickness: 2px;
 }
 
@@ -167,62 +165,83 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 2px solid #9a031e;
-  border-top: 2px solid #9a031e;
-  border-right: 3px solid #9a031e;
-  border-bottom: 3px solid #9a031e;
+  border-right: 3px solid gold;
+  border-bottom: 3px solid gold;
   margin-top: 5px;
   margin-bottom: 20px;
   padding: 30px 20px;
   border-radius: 25px;
-  background-color: whitesmoke;
-  filter: drop-shadow(5px 5px 3px gray);
+  filter: drop-shadow(5px 5px 5px #B4B8AB);
   text-align: center;
+  background-color: #153243;
+  color: white;
 }
 
 .delete-btn {
-  color: #b00107;
-  background-color: whitesmoke;
-  border: 1px solid #b00107;
+  color: gold;
+  background-color: #153243;
+  border-bottom: 1px solid gold;
+  border-right: 1px solid gold;
 }
 
 .delete-btn:hover {
   cursor: pointer;
-  background-color: red;
+  background-color: gold;
   color: white;
-  border: 1px solid gold;
+  border-bottom: 1px solid #284B63;
+  border-right: 1px solid #284B63;
 }
 
 .edit-btn {
-  color: #12657a;
-  background-color: whitesmoke;
-  border: 1px solid #12657a;
-  padding: 5px 7px;
+  color: gold;
+  background-color: #153243;
+  border-bottom: 1px solid gold;
+  border-right: 1px solid gold;
 }
 
 .edit-btn:hover {
   cursor: pointer;
-  background-color: blue;
+  background-color: gold;
   color: white;
-  border: 1px solid gold;
+  border-bottom: 1px solid #284B63;
+  border-right: 1px solid #284B63;
 }
 
 .details-btn {
-  background-color: whitesmoke;
-  color: #613f75;
-  border: 1px solid #613f75;
+  color: gold;
+  background-color: #153243;
+  border-bottom: 1px solid gold;
+  border-right: 1px solid gold;
 }
 
 .details-btn:hover {
   cursor: pointer;
-  background-color: purple;
+  background-color: gold;
   color: white;
-  border: 1px solid gold;
+  border-bottom: 1px solid #284B63;
+  border-right: 1px solid #284B63;
 }
 
 input, textarea {
   font-family: 'Montserrat', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
   'Helvetica Neue', sans-serif;
+}
+
+footer {
+  height: 60px;
+  width: 100%;
+  background-color: #153243;
+  border-top: 5px solid gold;
+  width: 90vw;
+  max-width: 1400px;
+  position: fixed;
+  bottom: 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.footer-buffer {
+  padding-bottom: 70px;
 }
 
 @media (min-width: 500px) {
