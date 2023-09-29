@@ -240,6 +240,15 @@ footer {
   border-top-right-radius: 15px;
 }
 
+footer img {
+  position: absolute;
+  right: 10px;
+  border-radius: 15px;
+  width: 200px;
+  height: 40px;
+  bottom: 8px;
+}
+
 .footer-buffer {
   padding-bottom: 70px;
 }
