@@ -13,8 +13,8 @@
         <div class="overview-div">Created by <%= program.addedBy.name %> on <%= program.createdAt.toLocaleDateString() %></div>
       </div>
     <div class="note-container">
-        <p>A note from <%= program.addedBy.name %>:</p>
-      <div><%= program.note %></div>
+      <p>A note from <%= program.addedBy.name %>:</p>
+      <div class="note"><%= program.note %></div>
     </div>
     <% program.workouts.forEach(workout => { %>
       <h3><%= workout.name %>:</h3>
@@ -142,6 +142,7 @@
             </div>
             <form class="edit-form" method="POST" action="/programs/<%= program._id %>/reviews/<%= review._id %>?_method=PUT">
               <input type="text" name="content" value="<%= review.content %>">
+              <button class="add-review-btn btn edit-review-btn" type="submit">+</button>
             </form>
           <% } %>
         </div>

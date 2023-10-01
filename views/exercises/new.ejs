@@ -7,6 +7,7 @@
   <h1 class="page-header">Exercises</h1>
   <div id="exercise-page-body">
     <% if (user) { %>
+      <h2 class="page-subheader">Add an Exercise</h2>
       <form id="new-exercise-form" action="/exercises" method="POST">
         <label for="exercise-name-input">Exercise Name:</label>
         <input type="text" name="name" id="exercise-name-input">

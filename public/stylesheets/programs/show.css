@@ -21,6 +21,7 @@
   padding: 2px 5px;
   margin: 0px 5px;
   border-radius: 10px;
+  color: gold;
 }
 
 .btn-container {
@@ -50,11 +51,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
 }
 
 .note-container, .exercise-card {
   width: 75%;
   padding: 10px 0px 5px 0px;
+}
+
+.exercise-card, .note {
+  filter: drop-shadow(3px 3px 3px #B4B8AB);
 }
 
 .note-container div, .workout-card {
@@ -65,13 +71,13 @@
 }
 
 .note-container div {
-  border-right: 1px solid #B4B8AB;
-  border-bottom: 1px solid #B4B8AB;
+  border-right: 1px solid gold;
+  border-bottom: 1px solid gold;
 }
 
 .workout-card {
-  border-right: 1px solid gold;
-  border-bottom: 1px solid gold;
+  border-right: 2px solid gold;
+  border-bottom: 2px solid gold;
   background-color: #284B63;
   width: 80%;
   display: flex;
@@ -137,11 +143,14 @@ input, select {
   color: white;
 }
 
+.delete-btn:hover, .edit-btn:hover {
+  color: #153243;
+}
+
 .add-exercise-btn, .add-review-btn, .add-workout-btn {
   background-color: #284B63;
   padding: 0px 5px;;
   border: 2px solid gold;
-  color: gold;
   font-size: 20px;
   margin-left: 10px;
 }
@@ -275,6 +284,10 @@ input, select {
   margin-bottom: 10px;
   margin-top: 5px;
   background-color: #153243;
+}
+
+.edit-review-btn {
+  margin-bottom: 5px;
 }
 
 @media (max-width: 450px) {

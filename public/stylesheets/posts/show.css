@@ -95,13 +95,11 @@
 .comment-and-btn {
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items:center;
 }
 
 .btn-container {
-  display: flex;
-  flex-direction: column;
+  margin-top: 30px;
 }
 
 .author-name {
@@ -121,6 +119,11 @@
 
 .add-btn {
   border: 2px solid gold;
+}
+
+.add-comment-btn {
+  height: 25px;
+  margin-top: 10px;
 }
 
 .btn:hover {

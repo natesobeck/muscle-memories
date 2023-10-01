@@ -29,6 +29,7 @@
             </div>
             <form class="edit-form" method="POST" action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT">
               <input type="text" name="content" value="<%= comment.content %>">
+              <button type="submit" class="btn add-btn add-comment-btn">+</button>
             </form>
             <% } %>
           <% }) %>
